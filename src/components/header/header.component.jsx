@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Cart } from "../../assets/shopping-cart.svg";
 import { ReactComponent as Logo } from "../../assets/if.svg";
 
+import { auth } from "../../firebase/firebase.utils.js";
+
 import "./header.styles.sass";
 
-export default function Header() {
+export default function Header({ currentUser }) {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -19,10 +21,16 @@ export default function Header() {
         <Link to="/contact" className="option">
           CONTACT
         </Link>
-        <Link to="/sign-in" className="option">
-          SIGN IN
-        </Link>
-        <Link to="/cart" className="logo-container">
+        {currentUser ? (
+          <div onClick={() => auth.signOut()} className="option">
+            SIGN OUT
+          </div>
+        ) : (
+          <Link to="/sign-in" className="option">
+            SIGN IN
+          </Link>
+        )}
+        <Link to="/cart" className="option">
           <Cart className="logo" />
         </Link>
       </div>
