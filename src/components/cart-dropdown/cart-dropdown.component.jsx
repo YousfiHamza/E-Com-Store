@@ -13,7 +13,7 @@ import { createStructuredSelector } from "reselect";
 
 import "./cart-dropdown.styles.sass";
 
-const CartDropdown = ({ cartItems, history, dispatch }) => (
+const CartDropdown = ({ cartItems, history, dispatch, match }) => (
   <div className="cart-dropdown">
     <div className="cart-items">
       {cartItems.length ? (
@@ -26,7 +26,8 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     </div>
     <CustomButton
       onClick={() => {
-        history.push("./checkout");
+        console.log(match, history);
+        history.push(`${match.url}checkout`);
         dispatch(toggleCartHidden());
       }}
     >
