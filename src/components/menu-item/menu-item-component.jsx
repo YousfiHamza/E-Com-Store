@@ -4,11 +4,11 @@ import "./menu-item.styles.sass";
 // HOC that helps us avoid prop drilling and gives us access to the props we need such as " Location , History ... "
 import { withRouter } from "react-router-dom";
 
-const MenuItem = ({ title, imageUrl, size, history, match }) => {
+const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
   return (
     <div
       className={`${size} menu-item`}
-      onClick={() => history.push(`${match.url}${title}`)}
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
         className="background-image"

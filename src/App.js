@@ -9,7 +9,7 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import "./App.sass";
 
 import Header from "./components/header/header.component.jsx";
-import HomePage from "./views/homepage/homepage.component";
+import HomePage from "./views/homePage/homepage.component";
 import ShopPage from "./views/shopPage/shoppage.component.jsx";
 import SignInAndSignUpPage from "./views/sign-in-and-sign-up-Page/sign-in-and-sign-up.component.jsx";
 import CheckoutPage from "./views/checkoutPage/checkoutPage.component.jsx";
@@ -47,7 +47,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
+          <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
           <Route
             exact
