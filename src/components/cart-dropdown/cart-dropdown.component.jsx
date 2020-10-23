@@ -26,7 +26,6 @@ const CartDropdown = ({ cartItems, history, dispatch, match }) => (
     </div>
     <CustomButton
       onClick={() => {
-        console.log(match, history);
         history.push(`${match.url}checkout`);
         dispatch(toggleCartHidden());
       }}
