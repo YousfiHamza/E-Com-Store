@@ -19,7 +19,7 @@ import "./header.styles.sass";
 const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
-      <Link to="/" className="logo-container">
+      <Link to="/E-Com-Store" className="logo-container">
         <Logo className="logo" />
       </Link>
       <div className="options">
