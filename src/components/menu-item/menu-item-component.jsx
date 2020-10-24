@@ -1,26 +1,31 @@
 import React from "react";
-import "./menu-item.styles.sass";
+
+import {
+  MenuItemContainer,
+  BackgroundImageContainer,
+  ContentContainer,
+  TitleContainer,
+  SubtitleContainer,
+} from "./menu-item.styles";
 
 // HOC that helps us avoid prop drilling and gives us access to the props we need such as " Location , History ... "
 import { withRouter } from "react-router-dom";
 
 const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
   return (
-    <div
-      className={`${size} menu-item`}
-      onClick={() => history.push(`${linkUrl}`)}
+    <MenuItemContainer
+      size={size}
+      onClick={() => history.replace(`/${linkUrl}`)}
     >
-      <div
+      <BackgroundImageContainer
+        imageUrl={imageUrl}
         className="background-image"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
       />
-      <div className="content">
-        <h1 className="title">{title.toUpperCase()}</h1>
-        <span className="subtitle">SHOP NOW</span>
-      </div>
-    </div>
+      <ContentContainer className="content">
+        <TitleContainer>{title.toUpperCase()}</TitleContainer>
+        <SubtitleContainer>SHOP NOW</SubtitleContainer>
+      </ContentContainer>
+    </MenuItemContainer>
   );
 };
 

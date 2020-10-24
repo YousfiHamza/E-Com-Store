@@ -1,14 +1,14 @@
 import React from "react";
-import "./sign-in-and-sign-up.styles.sass";
+import { SignInAndSignUpContainer } from "./sign-in-and-sign-up.styles.jsx";
 
 import SignIn from "../../components/sign-in/sign-in.component";
 import SignUp from "../../components/sign-up/sign-up.component";
 
 export default function SignInAndSignUpPage() {
   return (
-    <div className="signIn-and-signUp">
+    <SignInAndSignUpContainer>
       <SignIn />
       <SignUp />
-    </div>
+    </SignInAndSignUpContainer>
   );
 }

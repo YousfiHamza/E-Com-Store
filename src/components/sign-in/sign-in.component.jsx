@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./sign-in.styles.sass";
+import { SignInContainer, TitleContainer } from "./sign-in.styles";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -47,8 +47,8 @@ export default class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="sign-in">
-        <h2>I already have an account</h2>
+      <SignInContainer>
+        <TitleContainer>I already have an account</TitleContainer>
         <span>Sign In With Your Email And Password</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -76,7 +76,7 @@ export default class SignIn extends React.Component {
             SIGN IN with Facebook
           </CustomButton>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

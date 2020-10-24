@@ -8,7 +8,7 @@ import {
   createUserProfileDocument,
 } from "../../firebase/firebase.utils.js";
 
-import "./sign-up.styles.sass";
+import { SignUpContainer, TitleContainer } from "./sign-up.styles";
 
 class SignUp extends React.Component {
   constructor() {
@@ -60,8 +60,8 @@ class SignUp extends React.Component {
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
-      <div className="sign-up">
-        <h2 className="title">I do not Have an Account</h2>
+      <SignUpContainer>
+        <TitleContainer>I do not Have an Account</TitleContainer>
         <span>Sign up With your Email</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
@@ -98,7 +98,7 @@ class SignUp extends React.Component {
           />
           <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
-      </div>
+      </SignUpContainer>
     );
   }
 }
