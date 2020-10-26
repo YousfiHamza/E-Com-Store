@@ -11,12 +11,12 @@ export const selectShopCollections = createSelector(
 // same as last selector. Purpose : turn the object into an array to be iterable by .map function in the preview component.
 export const selectCollectionsForPreview = createSelector(
   [selectShopCollections],
-  (collections) => Object.keys(collections).map((key) => collections[key])
+  (collections) =>
+    collections ? Object.keys(collections).map((key) => collections[key]) : []
 );
 
 export const selectCollection = memoize((CollectionUrlParam) =>
-  createSelector(
-    [selectShopCollections],
-    (collections) => collections[CollectionUrlParam]
+  createSelector([selectShopCollections], (collections) =>
+    collections ? collections[CollectionUrlParam] : null
   )
 );
