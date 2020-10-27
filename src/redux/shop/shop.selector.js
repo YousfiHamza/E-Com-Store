@@ -20,3 +20,14 @@ export const selectCollection = memoize((CollectionUrlParam) =>
     collections ? collections[CollectionUrlParam] : null
   )
 );
+
+// new selector after the redux-thunk implementation
+export const selectIsCollectionFetching = createSelector(
+  [shopSelector],
+  (shop) => shop.isFetching
+);
+
+export const isCollectionLoaded = createSelector(
+  [shopSelector],
+  (shop) => !!shop.collections
+);

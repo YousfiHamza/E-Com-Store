@@ -24,7 +24,7 @@ import {
 const Header = ({ currentUser, hidden }) => {
   return (
     <HeaderContainer>
-      <LogoContainer to="/E-Com-Store">
+      <LogoContainer to="/">
         <Logo className="logo" />
       </LogoContainer>
       <OptionsContainer>
