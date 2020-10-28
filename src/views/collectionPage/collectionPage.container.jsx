@@ -5,11 +5,11 @@ import { createStructuredSelector } from "reselect";
 import WithSpinner from "../../components/with-spinner/with-spinner.component";
 
 import CollectionPage from "./collectionPage.component";
-import { isCollectionLoaded } from "../../redux/shop/shop.selector";
+import { isCollectionsLoaded } from "../../redux/shop/shop.selector";
 
 // the state needs to have the same name as the ones WITHSPINNER is waiting for.
 const mapStateToProps = createStructuredSelector({
-  isLoading: (state) => !isCollectionLoaded(state),
+  isLoading: (state) => !isCollectionsLoaded(state),
 });
 
 // the container renders nothing, it just passes the props !
