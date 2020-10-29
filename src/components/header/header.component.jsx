@@ -9,7 +9,10 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import {
+  selectCartHidden,
+  selectCartItems,
+} from "../../redux/cart/cart.selectors";
 
 import { auth } from "../../firebase/firebase.utils.js";
 
@@ -21,7 +24,7 @@ import {
   OptionDiv,
 } from "./header.styles";
 
-const Header = ({ currentUser, hidden }) => {
+const Header = ({ currentUser, hidden, cartItems }) => {
   return (
     <HeaderContainer>
       <LogoContainer to="/E-Com-Store">
@@ -37,14 +40,16 @@ const Header = ({ currentUser, hidden }) => {
         )}
         <CartIcon />
       </OptionsContainer>
-      {hidden ? "" : <CartDropdown />}
+      {!hidden && cartItems.length ? <CartDropdown /> : ""}
     </HeaderContainer>
   );
+  // the cart wont show unless they is at least 1 item there
 };
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
+  cartItems: selectCartItems,
 });
 
 export default connect(mapStateToProps)(Header);

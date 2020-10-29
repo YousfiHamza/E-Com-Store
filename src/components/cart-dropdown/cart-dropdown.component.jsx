@@ -13,20 +13,15 @@ import { createStructuredSelector } from "reselect";
 import {
   CartDropDownContainer,
   ItemsContainer,
-  EmptyCartContainer,
   CartDropdownButton,
 } from "./cart-dropdown.styles";
 
 const CartDropdown = ({ cartItems, history, dispatch, match }) => (
   <CartDropDownContainer>
     <ItemsContainer>
-      {cartItems.length ? (
-        cartItems.map((item) => {
-          return <CartItem key={item.id} item={item} />;
-        })
-      ) : (
-        <EmptyCartContainer>Your Cart Is Empty !</EmptyCartContainer>
-      )}
+      {cartItems.map((item) => {
+        return <CartItem key={item.id} item={item} />;
+      })}
     </ItemsContainer>
     <CartDropdownButton
       onClick={() => {
