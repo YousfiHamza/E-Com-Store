@@ -7,6 +7,9 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import "./App.sass";
 
 import Header from "./components/header/header.component";
+import Header2 from "./components/header2/header2.component";
+import HeaderLinks2 from "./components/headerLinks/headerLinks.component";
+
 import HomePage from "./views/homePage/homepage.component";
 import ShopPage from "./views/shopPage/shoppage.component";
 import SignInAndSignUpPage from "./views/sign-in-and-sign-up-Page/sign-in-and-sign-up.component";
@@ -36,7 +39,16 @@ const App = ({ setCurrentUser }) => {
 
   return (
     <div className="app">
-      <Header />
+      <Header2
+        color="warning"
+        brand="YousFitness Clothing"
+        rightLinks={<HeaderLinks2 />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white",
+        }}
+      />
       <Switch>
         <Route exact path="/E-Com-Store" component={HomePage} />
         <Route path="/shop" component={ShopPage} />

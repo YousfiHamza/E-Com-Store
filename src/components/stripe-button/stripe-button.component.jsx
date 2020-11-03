@@ -2,7 +2,7 @@ import React from "react";
 
 import StripeCheckout from "react-stripe-checkout";
 
-import logo from "../../assets/logo-100px.png";
+import logo from "../../assets/images/logo-100px.png";
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;

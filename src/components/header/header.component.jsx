@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import { ReactComponent as Logo } from "../../assets/if.svg";
+import { ReactComponent as Logo } from "../../assets/images/if.svg";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
