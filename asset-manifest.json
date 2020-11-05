@@ -1,24 +1,30 @@
 {
   "files": {
-    "main.css": "/E-Com-Store/static/css/main.d04bef31.chunk.css",
-    "main.js": "/E-Com-Store/static/js/main.fda60230.chunk.js",
-    "main.js.map": "/E-Com-Store/static/js/main.fda60230.chunk.js.map",
+    "main.css": "/E-Com-Store/static/css/main.8ff59cd9.chunk.css",
+    "main.js": "/E-Com-Store/static/js/main.78b2b1ad.chunk.js",
+    "main.js.map": "/E-Com-Store/static/js/main.78b2b1ad.chunk.js.map",
     "runtime-main.js": "/E-Com-Store/static/js/runtime-main.c664c56c.js",
     "runtime-main.js.map": "/E-Com-Store/static/js/runtime-main.c664c56c.js.map",
-    "static/js/2.9d91861c.chunk.js": "/E-Com-Store/static/js/2.9d91861c.chunk.js",
-    "static/js/2.9d91861c.chunk.js.map": "/E-Com-Store/static/js/2.9d91861c.chunk.js.map",
+    "static/js/2.32b35811.chunk.js": "/E-Com-Store/static/js/2.32b35811.chunk.js",
+    "static/js/2.32b35811.chunk.js.map": "/E-Com-Store/static/js/2.32b35811.chunk.js.map",
     "index.html": "/E-Com-Store/index.html",
-    "precache-manifest.a89e8c86bfd40ba3820353c0c37856e0.js": "/E-Com-Store/precache-manifest.a89e8c86bfd40ba3820353c0c37856e0.js",
+    "precache-manifest.69b8ecb16a5a71a47fb6c6022df8e75e.js": "/E-Com-Store/precache-manifest.69b8ecb16a5a71a47fb6c6022df8e75e.js",
     "service-worker.js": "/E-Com-Store/service-worker.js",
-    "static/css/main.d04bef31.chunk.css.map": "/E-Com-Store/static/css/main.d04bef31.chunk.css.map",
-    "static/js/2.9d91861c.chunk.js.LICENSE.txt": "/E-Com-Store/static/js/2.9d91861c.chunk.js.LICENSE.txt",
-    "static/media/if.117749b8.svg": "/E-Com-Store/static/media/if.117749b8.svg",
-    "static/media/shopping-bag.30f07071.svg": "/E-Com-Store/static/media/shopping-bag.30f07071.svg"
+    "static/css/main.8ff59cd9.chunk.css.map": "/E-Com-Store/static/css/main.8ff59cd9.chunk.css.map",
+    "static/js/2.32b35811.chunk.js.LICENSE.txt": "/E-Com-Store/static/js/2.32b35811.chunk.js.LICENSE.txt",
+    "static/media/YousfitnessLogo.png": "/E-Com-Store/static/media/YousfitnessLogo.a5a86f17.png",
+    "static/media/shopping-bag.30f07071.svg": "/E-Com-Store/static/media/shopping-bag.30f07071.svg",
+    "static/media/team1.jpg": "/E-Com-Store/static/media/team1.2c0663c1.jpg",
+    "static/media/team2.jpg": "/E-Com-Store/static/media/team2.1e679932.jpg",
+    "static/media/team3.jpg": "/E-Com-Store/static/media/team3.c50c7746.jpg",
+    "static/media/wave_1.gif": "/E-Com-Store/static/media/wave_1.8b134bd9.gif",
+    "static/media/wave_2.png": "/E-Com-Store/static/media/wave_2.bf19e90f.png",
+    "static/media/wave_3.png": "/E-Com-Store/static/media/wave_3.26648e95.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c664c56c.js",
-    "static/js/2.9d91861c.chunk.js",
-    "static/css/main.d04bef31.chunk.css",
-    "static/js/main.fda60230.chunk.js"
+    "static/js/2.32b35811.chunk.js",
+    "static/css/main.8ff59cd9.chunk.css",
+    "static/js/main.78b2b1ad.chunk.js"
   ]
 }
