@@ -5,13 +5,18 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectDirectorySections } from "../../redux/directory/directory.selector";
 
+//Material UI
+import Grid from "@material-ui/core/Grid";
+
 import MenuItem from "../menu-item/menu-item-component";
 
 const Directory = ({ sections }) => (
   <DirectoryMenuContainer>
-    {sections.map(({ id, ...otherProps }) => (
-      <MenuItem key={id} {...otherProps} />
-    ))}
+    <Grid container justify="space-around">
+      {sections.map(({ id, ...otherProps }) => (
+        <MenuItem key={id} {...otherProps} />
+      ))}
+    </Grid>
   </DirectoryMenuContainer>
 );
 

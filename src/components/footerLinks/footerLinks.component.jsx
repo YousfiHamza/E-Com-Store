@@ -12,12 +12,6 @@ import {
 
 import { auth } from "../../firebase/firebase.utils.js";
 
-//our Components
-import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
-
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link, withRouter } from "react-router-dom";
 
@@ -41,11 +35,11 @@ import {
 import CustomDropdown from "../customDropdown/customDropdown.component";
 import Button from "../customButton2/button.component";
 
-import styles from "./headerLinks.styles";
+import styles from "../headerLinks/headerLinks.styles";
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
+const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
   const classes = useStyles();
   console.log(history);
   return (
@@ -53,7 +47,7 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title={window.innerWidth > 959 ? "And More ..." : "It's All "}
+          title={window.innerWidth <= 959 ? "And More ..." : "It's All "}
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -65,7 +59,7 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
 
       <ListItem className={classes.listItem}>
         <Tooltip
-          title={window.innerWidth > 959 ? "But it's Closed Now ..." : "Visit"}
+          title={window.innerWidth <= 959 ? "But it's Closed Now ..." : "Visit"}
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -79,7 +73,7 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title={window.innerWidth > 959 ? "Or Dont ..." : "Try To"}
+          title={window.innerWidth <= 959 ? "Or Dont ..." : "Try To"}
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -92,7 +86,7 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title={window.innerWidth > 959 ? "In-N-Out" : "You Should"}
+          title={window.innerWidth <= 959 ? "In-N-Out" : "You Should"}
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -107,27 +101,6 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
           )}
         </Tooltip>
       </ListItem>
-
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-twitter"
-          title={window.innerWidth > 959 ? "All Yours ..." : "Check"}
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          {window.innerWidth > 959 ? (
-            <CartIcon className={classes.icons} />
-          ) : (
-            <Link
-              to={cartItems.length ? "/checkout" : history.location.pathname}
-              className={classes.navLink}
-            >
-              <ShoppingBasketTwoTone className={classes.icons} /> Your Cart
-            </Link>
-          )}
-        </Tooltip>
-        {!hidden && cartItems.length ? <CartDropdown /> : ""}
-      </ListItem>
     </List>
   );
 };
@@ -138,4 +111,4 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
-export default withRouter(connect(mapStateToProps)(HeaderLinks));
+export default withRouter(connect(mapStateToProps)(FooterLinks));

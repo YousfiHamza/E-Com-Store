@@ -7,8 +7,8 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import "./App.sass";
 
 import Header from "./components/header/header.component";
-import Header2 from "./components/header2/header2.component";
-import HeaderLinks2 from "./components/headerLinks/headerLinks.component";
+import HeaderLinks from "./components/headerLinks/headerLinks.component";
+import Footer from "./components/footer/footer.component.jsx";
 
 import HomePage from "./views/homePage/homepage.component";
 import ShopPage from "./views/shopPage/shoppage.component";
@@ -39,14 +39,14 @@ const App = ({ setCurrentUser }) => {
 
   return (
     <div className="app">
-      <Header2
-        color="warning"
-        brand="YousFitness Clothing"
-        rightLinks={<HeaderLinks2 />}
+      <Header
+        color="white"
+        brand="YousFitness - Clothing"
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 400,
-          color: "white",
+          height: 200,
+          color: "info",
         }}
       />
       <Switch>
@@ -56,6 +56,7 @@ const App = ({ setCurrentUser }) => {
         <Route exact path="/sign-in" component={SignInAndSignUpPage} />
         <Route path="/" component={HomePage} />
       </Switch>
+      <Footer />
     </div>
   );
 };

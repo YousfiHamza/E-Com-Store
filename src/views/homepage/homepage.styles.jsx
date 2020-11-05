@@ -6,3 +6,9 @@ export const HomePageContainer = styled.div`
   align-items: center;
   padding: 20px 80px;
 `;
+
+export const HomeButtonContainer = styled.div`
+  z-index: 11;
+  position: absolute;
+  top: 50vh;
+`;

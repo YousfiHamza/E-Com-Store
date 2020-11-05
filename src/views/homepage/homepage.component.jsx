@@ -1,14 +1,21 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-import { HomePageContainer } from "./homepage.styles";
-
+// Sections Components
+import Parallax from "../../components/parallax/parallax.component";
 import Directory from "../../components/directory/directory.component";
+import Details from "./sections/details/details.component";
+import Team from "./sections/team/team.component";
+import Sponsored from "./sections/sponsored/sponsored.component";
 
 const HomePage = () => {
   return (
-    <HomePageContainer>
+    <Fragment>
+      <Parallax filter image="home" />
       <Directory />
-    </HomePageContainer>
+      <Details />
+      <Sponsored />
+      <Team />
+    </Fragment>
   );
 };
 

@@ -1,55 +1,163 @@
 import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Hidden from "@material-ui/core/Hidden";
+import Drawer from "@material-ui/core/Drawer";
+// @material-ui/icons
+import Menu from "@material-ui/icons/Menu";
+// core components
+import styles from "./header.styles";
 
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import Logo from "../../assets/images/YousfitnessLogo.png";
+import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/images/if.svg";
+const useStyles = makeStyles(styles);
 
-import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+export default function Header(props) {
+  const classes = useStyles();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  React.useEffect(() => {
+    if (props.changeColorOnScroll) {
+      window.addEventListener("scroll", headerColorChange);
+    }
+    return function cleanup() {
+      if (props.changeColorOnScroll) {
+        window.removeEventListener("scroll", headerColorChange);
+      }
+    };
+  });
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  const headerColorChange = () => {
+    const { color, changeColorOnScroll } = props;
+    const windowsScrollTop = window.pageYOffset;
+    if (windowsScrollTop > changeColorOnScroll.height) {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove(classes[color]);
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add(classes[changeColorOnScroll.color]);
+    } else {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add(classes[color]);
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove(classes[changeColorOnScroll.color]);
+    }
+  };
+  const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
+  const appBarClasses = classNames({
+    [classes.appBar]: true,
+    [classes[color]]: color,
+    [classes.absolute]: absolute,
+    [classes.fixed]: fixed,
+  });
+  const brandComponent = (
+    <Link to="/E-Com-Store" className={classes.title}>
+      <Hidden smDown implementation="css">
+        {brand}
+      </Hidden>
 
-import { selectCurrentUser } from "../../redux/user/user.selectors";
-import {
-  selectCartHidden,
-  selectCartItems,
-} from "../../redux/cart/cart.selectors";
-
-import { auth } from "../../firebase/firebase.utils.js";
-
-import {
-  HeaderContainer,
-  LogoContainer,
-  OptionsContainer,
-  OptionLink,
-  OptionDiv,
-} from "./header.styles";
-
-const Header = ({ currentUser, hidden, cartItems }) => {
-  return (
-    <HeaderContainer>
-      <LogoContainer to="/E-Com-Store">
-        <Logo className="logo" />
-      </LogoContainer>
-      <OptionsContainer>
-        <OptionLink to="/shop">SHOP</OptionLink>
-        <OptionLink to="/contact">CONTACT</OptionLink>
-        {currentUser ? (
-          <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
-        ) : (
-          <OptionLink to="/sign-in">SIGN IN</OptionLink>
-        )}
-        <CartIcon />
-      </OptionsContainer>
-      {!hidden && cartItems.length ? <CartDropdown /> : ""}
-    </HeaderContainer>
+      <Hidden mdUp implementation="css">
+        <img style={{ height: "77px", width: "auto" }} src={Logo} alt="..." />
+      </Hidden>
+    </Link>
   );
-  // the cart wont show unless they is at least 1 item there
+  return (
+    <AppBar className={appBarClasses}>
+      <Toolbar className={classes.container}>
+        {leftLinks !== undefined ? brandComponent : null}
+        <div className={classes.flex}>
+          {leftLinks !== undefined ? (
+            <Hidden smDown implementation="css">
+              {leftLinks}
+            </Hidden>
+          ) : (
+            brandComponent
+          )}
+        </div>
+        <Hidden smDown implementation="css">
+          {rightLinks}
+        </Hidden>
+        <Hidden mdUp>
+          <IconButton
+            color="white"
+            aria-label="open drawer"
+            onClick={handleDrawerToggle}
+          >
+            <Menu style={{ height: "77px", width: "auto" }} />
+          </IconButton>
+        </Hidden>
+      </Toolbar>
+      <Hidden mdUp implementation="js">
+        <Drawer
+          variant="temporary"
+          anchor={"right"}
+          open={mobileOpen}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          onClose={handleDrawerToggle}
+        >
+          <div className={classes.appResponsive}>
+            {leftLinks}
+            {rightLinks}
+          </div>
+        </Drawer>
+      </Hidden>
+    </AppBar>
+  );
+}
+
+Header.defaultProp = {
+  color: "white",
 };
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  hidden: selectCartHidden,
-  cartItems: selectCartItems,
-});
-
-export default connect(mapStateToProps)(Header);
+Header.propTypes = {
+  color: PropTypes.oneOf([
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger",
+    "transparent",
+    "white",
+    "rose",
+    "dark",
+  ]),
+  rightLinks: PropTypes.node,
+  leftLinks: PropTypes.node,
+  brand: PropTypes.string,
+  fixed: PropTypes.bool,
+  absolute: PropTypes.bool,
+  // this will cause the sidebar to change the color from
+  // props.color (see above) to changeColorOnScroll.color
+  // when the window.pageYOffset is heigher or equal to
+  // changeColorOnScroll.height and then when it is smaller than
+  // changeColorOnScroll.height change it back to
+  // props.color (see above)
+  changeColorOnScroll: PropTypes.shape({
+    height: PropTypes.number.isRequired,
+    color: PropTypes.oneOf([
+      "primary",
+      "info",
+      "success",
+      "warning",
+      "danger",
+      "transparent",
+      "white",
+      "rose",
+      "dark",
+    ]).isRequired,
+  }),
+};

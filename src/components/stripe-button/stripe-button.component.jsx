@@ -2,7 +2,7 @@ import React from "react";
 
 import StripeCheckout from "react-stripe-checkout";
 
-import logo from "../../assets/images/logo-100px.png";
+import Logo from "../../assets/images/YousfitnessLogo.png";
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
@@ -20,7 +20,7 @@ const StripeCheckoutButton = ({ price }) => {
       name="Y-H Clothing"
       billingAddress
       shippingAddress
-      image={logo}
+      image={Logo}
       description={`Your Total is : $${price}`}
       amount={priceForStripe}
       panelLabel="Pay Now"

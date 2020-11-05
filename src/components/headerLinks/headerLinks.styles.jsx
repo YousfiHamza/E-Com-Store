@@ -40,7 +40,7 @@ const headerLinksStyle = (theme) => ({
     color: "inherit",
     position: "relative",
     padding: "0.9375rem",
-    fontWeight: "400",
+    fontWeight: "700",
     fontSize: "12px",
     textTransform: "uppercase",
     borderRadius: "3px",
@@ -49,8 +49,8 @@ const headerLinksStyle = (theme) => ({
     margin: "0px",
     display: "inline-flex",
     "&:hover,&:focus": {
-      color: "inherit",
-      background: "rgba(200, 200, 200, 0.2)",
+      color: "black",
+      background: "rgba(123, 210, 255, 0.5)",
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -87,7 +87,7 @@ const headerLinksStyle = (theme) => ({
     display: "inline-flex",
   },
   navLinkActive: {
-    color: "inherit",
+    color: "red",
     backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
   icons: {
