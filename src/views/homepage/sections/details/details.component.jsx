@@ -1,16 +1,16 @@
 import React from "react";
 
 //Material UI
-import { Typography, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import {
   LocalShippingTwoTone,
   ChatBubbleTwoTone,
   MonetizationOnTwoTone,
 } from "@material-ui/icons";
 
-import InfoArea from "../../../../components/InfoArea/infoArea.component";
+import { TitleComponent, DescriptionComponent } from "./details.styles";
 
-import Background1 from "../../../../assets/images/backgrounds/wave_1.gif";
+import InfoArea from "../../../../components/InfoArea/infoArea.component";
 
 const Details = () => {
   return (
@@ -23,37 +23,16 @@ const Details = () => {
       }}
     >
       <Grid Item xs={10} md={6}>
-        <Typography
-          variant="h2"
-          align="center"
-          style={{
-            fontFamily: "lobster",
-            backgroundImage: "url(" + Background1 + ")",
-            backgroundSize: "50% ",
-            backgroundRepeat: "no-repeat",
-            marginBottom: "44px",
-            textShadow: "5px 5px 10px cyan, 5px 5px 10px blue",
-          }}
-          data-aos="fade-down"
-        >
+        <TitleComponent variant="h2" align="center" data-aos="fade-down">
           Let's talk Clothes
-        </Typography>
-        <Typography
-          data-aos="fade-down"
-          align="center"
-          style={{
-            color: "GrayText",
-            fontStyle: "italic",
-            fontFamily: "Grenze Gotisch",
-            fontSize: "22px",
-          }}
-        >
+        </TitleComponent>
+        <DescriptionComponent data-aos="fade-down" align="center">
           It's in this paragraph were we can write more details about Our
           Yousfitness Brand's products. Keep you user engaged by providing
           meaningful information. Remember that by this time, the user is
           curious, otherwise he wouldn't scroll to get here. We're alse thinking
           about adding a CTA ( call to action ) button !
-        </Typography>
+        </DescriptionComponent>
       </Grid>
 
       <Grid
