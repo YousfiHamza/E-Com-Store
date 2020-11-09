@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
 
 import {
   auth,
   createUserProfileDocument,
 } from "../../firebase/firebase.utils.js";
 
-import { SignUpContainer, TitleContainer } from "./sign-up.styles";
+import {
+  SignUpContainer,
+  TitleContainer,
+  ButtonContainer,
+} from "./sign-up.styles";
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
@@ -56,7 +59,7 @@ const SignUp = () => {
   };
 
   return (
-    <SignUpContainer>
+    <SignUpContainer item xs={12} md={5}>
       <TitleContainer>I do not Have an Account</TitleContainer>
       <span>Sign up With your Email</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
@@ -92,7 +95,7 @@ const SignUp = () => {
           label="Confirm Password"
           required
         />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <ButtonContainer type="submit">SIGN UP</ButtonContainer>
       </form>
     </SignUpContainer>
   );

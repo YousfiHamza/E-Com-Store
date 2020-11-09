@@ -43,7 +43,7 @@ const SignIn = () => {
   };
 
   return (
-    <SignInContainer>
+    <SignInContainer item xs={12} md={5}>
       <TitleContainer>I already have an account</TitleContainer>
       <span>Sign In With Your Email And Password</span>
 

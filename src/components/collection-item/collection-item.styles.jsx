@@ -1,56 +1,88 @@
 import styled from "styled-components";
 import CustomButton from "../custom-button/custom-button.component";
 
-export const CollectionItemContainer = styled.div`
-  width: 22vw;
+//Material UI
+import Grid from "@material-ui/core/Grid";
+
+export const CollectionItemContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
+  @media (min-width: 900px) {
+    height: 450px;
+  }
   height: 350px;
   align-items: center;
   position: relative;
-  margin-bottom: 30px;
+  margin: 11px;
+  .card {
+    position: absolute;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s ease-in-out;
+    .image {
+      height: 100%;
+      width: 100%;
+      border-radius: 33px;
+    }
+    .front,
+    .back {
+      height: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+      position: absolute;
+      border-radius: 33px;
+    }
+    .back {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 50, 100, 0.9);
+    }
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
   &:hover {
     .image {
       opacity: 0.8;
-    }
-    button {
-      opacity: 0.85;
-      display: block;
     }
   }
 `;
 
 export const CollectionFooterContainer = styled.div`
   width: 100%;
-  height: 5%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
+  height: 25%;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  font-family: lobster;
 `;
 
-export const NameContainer = styled.span`
-  width: 90%;
+export const NameContainer = styled.div`
+  width: 100%;
   margin-bottom: 15px;
 `;
 
-export const PriceContainer = styled.span`
-  width: 10%;
-  text-align: right;
+export const PriceContainer = styled.div`
+  width: 100%;
 `;
 
 export const AddButton = styled(CustomButton)`
   width: 80%;
-  opacity: 0.7;
-  position: absolute;
-  top: 255px;
-  display: none;
-`;
-
-export const BackgroundImage = styled.div`
-  width: 100%;
-  height: 95%;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 5px;
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  margin: 20px 0;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+  @media (max-width: 432px) {
+    font-size: 14px;
+    width: 100%;
+  }
 `;

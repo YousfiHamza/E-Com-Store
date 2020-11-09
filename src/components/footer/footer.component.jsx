@@ -28,7 +28,7 @@ const Footer = () => {
       alignItems="center"
       xs={12}
     >
-      <Grid item xs={11} md={3}>
+      <Grid item xs={12} md={3}>
         <Link to="/E-Com-Store">
           <BrandContainer align="center" variant="h3">
             YousFitness - Clothing
@@ -38,7 +38,7 @@ const Footer = () => {
       <Grid
         item
         justify="center"
-        xs={11}
+        xs={12}
         md={6}
         style={{
           display: "flex",
@@ -47,7 +47,7 @@ const Footer = () => {
       >
         <FooterLinks />
       </Grid>
-      <SocialsContainer container xs={11} md={3}>
+      <SocialsContainer container xs={12} md={3}>
         <Grid item justify="center" align="center" xs={3}>
           <a href="https://www.pinterest.com/" target="_blank">
             <PinterestIcon />

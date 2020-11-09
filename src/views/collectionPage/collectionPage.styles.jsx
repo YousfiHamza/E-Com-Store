@@ -2,16 +2,22 @@ import styled from "styled-components";
 
 export const CollectionPageContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  flex-wrap: wrap;
+  z-index: 123;
+  // border: black solid 5px;
+  border-radius: 25px;
+  padding: 33px;
+  margin-left: 11vw;
+  margin-right: 11vw;
+  margin-top: -33vh;
+  margin-bottom: 66px;
 `;
 
 export const TitleContainer = styled.h2`
-  font-size: 38px;
-  margin: 0 auto 30px;
-`;
-
-export const ItemsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  font-size: 55px;
+  font-family: "lobster";
+  background-repeat: no-repeat;
+  text-shadow: 5px 5px 10px cyan, 5px 5px 10px blue;
 `;

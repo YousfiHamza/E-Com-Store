@@ -9,8 +9,8 @@ const invertedStyles = css`
   &:hover {
     background-color: black;
     color: white;
-    border-radius: 25px;
-    transition: 0.5s linear;
+    border-radius: 15px;
+    transition: 0.3s linear;
     border: none;
   }
 `;
@@ -49,7 +49,10 @@ export const CustomButtonContainer = styled.button`
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px;
+  padding: 0 25px;
+  @media (max-width: 432px) {
+    padding: 0 15px;
+  }
   margin: 11px 0;
   font-size: 15px;
   background-color: black;
