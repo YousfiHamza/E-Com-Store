@@ -7,6 +7,8 @@ import { addItem } from "../../redux/cart/cart.actions";
 import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
+import Hidden from "@material-ui/core/Hidden";
+
 import {
   CollectionItemContainer,
   BackgroundImage,
@@ -32,15 +34,34 @@ const CollectionItem = ({ item, addItem, type }) => {
         <div className="front">
           <img className="image" src={imageUrl} alt="..." />
         </div>
-        <div className="back">
-          <CollectionFooterContainer>
-            <NameContainer>{name}</NameContainer>
-            <PriceContainer>{price}</PriceContainer>
-          </CollectionFooterContainer>
-          <AddButton inverted onClick={() => addItem(item)}>
-            <AddShoppingCartIcon /> ADD
-          </AddButton>
-        </div>
+        <Hidden smDown>
+          <div className="back">
+            <CollectionFooterContainer>
+              <NameContainer>{name}</NameContainer>
+              <PriceContainer>{price}</PriceContainer>
+            </CollectionFooterContainer>
+            <AddButton inverted onClick={() => addItem(item)}>
+              <AddShoppingCartIcon /> ADD
+            </AddButton>
+          </div>
+        </Hidden>
+        <Hidden mdUp>
+          <Grid container justify="center" className="mobile-card">
+            <Grid container>
+              <Grid item xs={12} className="mobile-text">
+                {name}
+              </Grid>
+              <Grid item xs={12} className="mobile-text">
+                {price}
+              </Grid>
+            </Grid>
+            <Grid item className="button" justify="center" xs={12}>
+              <AddButton inverted onClick={() => addItem(item)}>
+                <AddShoppingCartIcon /> ADD
+              </AddButton>
+            </Grid>
+          </Grid>
+        </Hidden>
       </div>
     </CollectionItemContainer>
   );

@@ -20,4 +20,6 @@ export const TitleContainer = styled.h2`
   font-family: "lobster";
   background-repeat: no-repeat;
   text-shadow: 5px 5px 10px cyan, 5px 5px 10px blue;
+  @media only screen and (max-width: 600px) {
+    font-size: 33px;
 `;

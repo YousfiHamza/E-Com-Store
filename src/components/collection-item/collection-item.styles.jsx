@@ -7,10 +7,10 @@ import Grid from "@material-ui/core/Grid";
 export const CollectionItemContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
-  @media (min-width: 900px) {
-    height: 450px;
+  @media (min-width: 960px) {
+    height: 432px;
   }
-  height: 350px;
+  height: 321px;
   align-items: center;
   position: relative;
   margin: 11px;
@@ -41,13 +41,34 @@ export const CollectionItemContainer = styled(Grid)`
       align-items: center;
       background-color: rgba(0, 50, 100, 0.9);
     }
-    &:hover {
-      transform: rotateY(180deg);
+    .mobile-card {
+      position: absolute;
+      bottom: 0;
+      height: 100%auto;
+      color: #fff;
+      .button {
+        margin: auto 0;
+      }
+      .mobile-text {
+        font-size: 22px;
+        text-align: center;
+        color: white;
+        font-style: italic;
+        font-family: lobster;
+        text-shadow: 5px 5px 10px cyan, 5px 5px 10px black;
+      }
+    }
+    @media (min-width: 960px) {
+      &:hover {
+        transform: rotateY(180deg);
+      }
     }
   }
-  &:hover {
-    .image {
-      opacity: 0.8;
+  @media (min-width: 960px) {
+    &:hover {
+      .image {
+        opacity: 0.8;
+      }
     }
   }
 `;
@@ -60,6 +81,7 @@ export const CollectionFooterContainer = styled.div`
   color: white;
   font-style: italic;
   font-family: lobster;
+  text-shadow: 5px 5px 10px cyan, 5px 5px 10px blue;
 `;
 
 export const NameContainer = styled.div`
@@ -81,8 +103,8 @@ export const AddButton = styled(CustomButton)`
   font-style: italic;
   font-size: 20px;
   text-align: center;
-  @media (max-width: 432px) {
+  @media (max-width: 959px) {
     font-size: 14px;
-    width: 100%;
+    margin: 10%;
   }
 `;
