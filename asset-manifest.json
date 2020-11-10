@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/Yousfitness/static/css/main.8ff59cd9.chunk.css",
-    "main.js": "/Yousfitness/static/js/main.e11cbc43.chunk.js",
-    "main.js.map": "/Yousfitness/static/js/main.e11cbc43.chunk.js.map",
-    "runtime-main.js": "/Yousfitness/static/js/runtime-main.0c50ac54.js",
-    "runtime-main.js.map": "/Yousfitness/static/js/runtime-main.0c50ac54.js.map",
-    "static/js/2.484c69a9.chunk.js": "/Yousfitness/static/js/2.484c69a9.chunk.js",
-    "static/js/2.484c69a9.chunk.js.map": "/Yousfitness/static/js/2.484c69a9.chunk.js.map",
-    "index.html": "/Yousfitness/index.html",
-    "precache-manifest.49de3932d6bc3ba5812aa4d6f4c2f0b7.js": "/Yousfitness/precache-manifest.49de3932d6bc3ba5812aa4d6f4c2f0b7.js",
-    "service-worker.js": "/Yousfitness/service-worker.js",
-    "static/css/main.8ff59cd9.chunk.css.map": "/Yousfitness/static/css/main.8ff59cd9.chunk.css.map",
-    "static/js/2.484c69a9.chunk.js.LICENSE.txt": "/Yousfitness/static/js/2.484c69a9.chunk.js.LICENSE.txt",
-    "static/media/YousfitnessLogo.png": "/Yousfitness/static/media/YousfitnessLogo.a5a86f17.png",
-    "static/media/shopping-bag.30f07071.svg": "/Yousfitness/static/media/shopping-bag.30f07071.svg",
-    "static/media/team1.jpg": "/Yousfitness/static/media/team1.2c0663c1.jpg",
-    "static/media/team2.jpg": "/Yousfitness/static/media/team2.1e679932.jpg",
-    "static/media/team3.jpg": "/Yousfitness/static/media/team3.c50c7746.jpg",
-    "static/media/wave_1.gif": "/Yousfitness/static/media/wave_1.8b134bd9.gif",
-    "static/media/wave_2.png": "/Yousfitness/static/media/wave_2.bf19e90f.png",
-    "static/media/wave_3.png": "/Yousfitness/static/media/wave_3.26648e95.png"
+    "main.css": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css",
+    "main.js": "/YH-Clothing/static/js/main.bc00ffa4.chunk.js",
+    "main.js.map": "/YH-Clothing/static/js/main.bc00ffa4.chunk.js.map",
+    "runtime-main.js": "/YH-Clothing/static/js/runtime-main.e91ab2fe.js",
+    "runtime-main.js.map": "/YH-Clothing/static/js/runtime-main.e91ab2fe.js.map",
+    "static/js/2.bb820ef8.chunk.js": "/YH-Clothing/static/js/2.bb820ef8.chunk.js",
+    "static/js/2.bb820ef8.chunk.js.map": "/YH-Clothing/static/js/2.bb820ef8.chunk.js.map",
+    "index.html": "/YH-Clothing/index.html",
+    "precache-manifest.488264b01b947b976a207240bcda5e71.js": "/YH-Clothing/precache-manifest.488264b01b947b976a207240bcda5e71.js",
+    "service-worker.js": "/YH-Clothing/service-worker.js",
+    "static/css/main.8ff59cd9.chunk.css.map": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css.map",
+    "static/js/2.bb820ef8.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/2.bb820ef8.chunk.js.LICENSE.txt",
+    "static/media/YousfitnessLogo.png": "/YH-Clothing/static/media/YousfitnessLogo.a5a86f17.png",
+    "static/media/shopping-bag.30f07071.svg": "/YH-Clothing/static/media/shopping-bag.30f07071.svg",
+    "static/media/team1.jpg": "/YH-Clothing/static/media/team1.2c0663c1.jpg",
+    "static/media/team2.jpg": "/YH-Clothing/static/media/team2.1e679932.jpg",
+    "static/media/team3.jpg": "/YH-Clothing/static/media/team3.c50c7746.jpg",
+    "static/media/wave_1.gif": "/YH-Clothing/static/media/wave_1.8b134bd9.gif",
+    "static/media/wave_2.png": "/YH-Clothing/static/media/wave_2.bf19e90f.png",
+    "static/media/wave_3.png": "/YH-Clothing/static/media/wave_3.26648e95.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0c50ac54.js",
-    "static/js/2.484c69a9.chunk.js",
+    "static/js/runtime-main.e91ab2fe.js",
+    "static/js/2.bb820ef8.chunk.js",
     "static/css/main.8ff59cd9.chunk.css",
-    "static/js/main.e11cbc43.chunk.js"
+    "static/js/main.bc00ffa4.chunk.js"
   ]
 }
