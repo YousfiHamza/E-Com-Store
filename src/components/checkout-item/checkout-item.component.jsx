@@ -16,25 +16,45 @@ import {
   removeItem,
 } from "../../redux/cart/cart.actions";
 
+import { RemoveCircle, AddCircle, DeleteForever } from "@material-ui/icons";
+
 const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
   const { imageUrl, name, quantity, price } = item;
   return (
-    <CheckoutItemContainer>
-      <ImageContainer>
+    <CheckoutItemContainer
+      container
+      alignItems="center"
+      justify="center"
+      xs={12}
+    >
+      <ImageContainer item xs={12} sm={2}>
         <img alt="cart-item" src={imageUrl} />
       </ImageContainer>
-      <TextContainer>{name}</TextContainer>
-      <QuantityContainer>
-        <div className="arrow" onClick={() => removeItem(item)}>
-          &#10094;
-        </div>
+      <TextContainer item xs={12} sm={3} style={{ fontWeight: "bold" }}>
+        {name}
+      </TextContainer>
+      <TextContainer item xs={5} sm={2}>
+        {price}
+      </TextContainer>
+      <QuantityContainer container xs={12} sm={3}>
+        <RemoveCircle
+          className="arrow"
+          onClick={() => removeItem(item)}
+          fontSize="small"
+        />
+
         <span className="value">{quantity}</span>
-        <div className="arrow" onClick={() => addItem(item)}>
-          &#10095;
-        </div>
+
+        <AddCircle
+          className="arrow"
+          onClick={() => addItem(item)}
+          fontSize="small"
+        />
       </QuantityContainer>
-      <TextContainer>{price}</TextContainer>
-      <RemoveButton onClick={() => clearItem(item)}>&#10008;</RemoveButton>
+
+      <RemoveButton xs={5} sm={2} onClick={() => clearItem(item)}>
+        <DeleteForever />
+      </RemoveButton>
     </CheckoutItemContainer>
   );
 };

@@ -21,7 +21,13 @@ const CollectionItem = ({ item, addItem, type }) => {
   const medium = type ? 2 : 3;
 
   return (
-    <CollectionItemContainer item xs={12} sm={5} md={medium}>
+    <CollectionItemContainer
+      item
+      xs={12}
+      sm={5}
+      md={medium}
+      data-aos="fade-down"
+    >
       <div className="card">
         <div className="front">
           <img className="image" src={imageUrl} alt="..." />

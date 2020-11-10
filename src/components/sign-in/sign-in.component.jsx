@@ -66,10 +66,10 @@ const SignIn = () => {
         />
         <CustomButton type="submit">SIGN IN</CustomButton>
         <CustomButton onClick={signInWithGoogle} isGoogleButton>
-          SIGN IN with Google
+          With Google
         </CustomButton>
         <CustomButton onClick={signInWithFaceBook} isFacebookButton>
-          SIGN IN with Facebook
+          With Facebook
         </CustomButton>
       </form>
     </SignInContainer>

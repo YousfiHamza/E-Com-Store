@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -22,41 +22,55 @@ import {
   TestWarningContainer,
 } from "./checkoutPage.styles";
 
+import Parallax from "../../components/parallax/parallax.component";
+
+import Hidden from "@material-ui/core/Hidden";
+
 const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
   // the user must have at least one item in his cart and he must be logged in
   if (currentUser && cartTotal) {
     return (
-      <CheckoutPageContainer>
-        <CheckoutHeaderContainer>
-          <HeaderBlockContainer>
-            <span> Product </span>
-          </HeaderBlockContainer>
-          <HeaderBlockContainer>
-            <span> Description </span>
-          </HeaderBlockContainer>
-          <HeaderBlockContainer>
-            <span> Quantity </span>
-          </HeaderBlockContainer>
-          <HeaderBlockContainer>
-            <span> Price </span>
-          </HeaderBlockContainer>
-          <HeaderBlockContainer>
-            <span> Remove </span>
-          </HeaderBlockContainer>
-        </CheckoutHeaderContainer>
-        {cartItems.map((item) => (
-          <CheckoutItem key={item.id} item={item} />
-        ))}
-        <TotalContainer>
-          <span>Total : $ {cartTotal}</span>
-        </TotalContainer>
-        <TestWarningContainer>
-          *Please use the following test credit card for payments*
-          <br />
-          4242 4242 4242 4242 - Exp: 12/34 - CVV: 567
-        </TestWarningContainer>
-        <StripeCheckoutButton price={cartTotal} />
-      </CheckoutPageContainer>
+      <Fragment>
+        <Parallax filter image="checkOut" />
+        <CheckoutPageContainer>
+          <Hidden xsDown>
+            <CheckoutHeaderContainer container xs={12}>
+              <HeaderBlockContainer item sm={2}>
+                <span> Product </span>
+              </HeaderBlockContainer>
+              <HeaderBlockContainer item sm={3}>
+                <span> Description </span>
+              </HeaderBlockContainer>
+              <HeaderBlockContainer item sm={2}>
+                <span> Price </span>
+              </HeaderBlockContainer>
+              <HeaderBlockContainer item sm={3}>
+                <span> Quantity </span>
+              </HeaderBlockContainer>
+              <HeaderBlockContainer item sm={2}>
+                <span> Remove </span>
+              </HeaderBlockContainer>
+            </CheckoutHeaderContainer>
+          </Hidden>
+
+          {cartItems.map((item) => (
+            <CheckoutItem key={item.id} item={item} />
+          ))}
+          <TotalContainer>
+            <span>Total : $ {cartTotal}</span>
+          </TotalContainer>
+          <TestWarningContainer>
+            *Please use the following test credit card for payments*
+            <br />
+            <br />
+            <span className="underlined">Card Number</span> : 4242 4242 4242
+            4242 <br />
+            <span className="underlined">Exp</span> : 12/34 <br />
+            <span className="underlined">CVV</span> : 567
+          </TestWarningContainer>
+          <StripeCheckoutButton price={cartTotal} />
+        </CheckoutPageContainer>
+      </Fragment>
     );
   }
   // if the cart is empty ... no need to stay on the checkuot page

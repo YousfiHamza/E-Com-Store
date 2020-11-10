@@ -1,45 +1,53 @@
 import styled from "styled-components";
 
+import { Grid } from "@material-ui/core";
+
 export const CheckoutPageContainer = styled.div`
-  width: 55%;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  background-color: white;
+  flex-wrap: wrap;
+  z-index: 123;
+  border-radius: 25px;
+  padding: 33px;
+  margin-left: 11vw;
+  margin-right: 11vw;
+  margin-top: -22vh;
+  margin-bottom: 66px;
   button {
     margin-left: auto;
     margin-top: 50px;
   }
+  .underlined {
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: 700;
+  }
 `;
 
-export const CheckoutHeaderContainer = styled.div`
+export const CheckoutHeaderContainer = styled(Grid)`
   width: 100%;
   padding: 10px 0;
   display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid darkgrey;
   text-align: center;
-  &:last-child {
-    width: 8%;
-  }
 `;
 
-export const HeaderBlockContainer = styled.div`
+export const HeaderBlockContainer = styled(Grid)`
   text-transform: capitalize;
-  width: 23%;
-  &:first-child {
-    text-align: left;
-  }
-  &:last-child {
-    text-align: right;
-  }
+  font-weight: bold;
+  font-style: italic;
+  font-family: lobster;
 `;
 
 export const TotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+  @media only screen and (max-width: 959px) {
+    font-size: 30px;
+  }
 `;
 
 export const TestWarningContainer = styled.div`

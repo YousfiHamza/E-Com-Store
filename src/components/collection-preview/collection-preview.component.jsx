@@ -9,6 +9,8 @@ import {
   PreviewContainer,
 } from "./collection-preview.styles";
 
+import DoubleArrowIcon from "@material-ui/icons/DoubleArrow";
+
 import CollectionItem from "../collection-item/collection-item.component";
 
 const CollectionPreview = ({ title, items, history, match, routeName }) => (
@@ -16,10 +18,11 @@ const CollectionPreview = ({ title, items, history, match, routeName }) => (
     <TitleContainer
       item
       onClick={() => history.push(`${match.path}/${routeName}`)}
+      data-aos="fade-right"
     >
-      {title.toUpperCase()}
+      <DoubleArrowIcon /> {title.toUpperCase()}
     </TitleContainer>{" "}
-    <PreviewContainer container xs={12} justify="center">
+    <PreviewContainer container xs={12} justify="center" data-aos="fade-right">
       {items
         .filter((item, index) => index < 4)
         .map((item) => (

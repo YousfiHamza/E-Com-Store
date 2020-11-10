@@ -12,13 +12,14 @@ import styles from "./parallaxStyle";
 const useStyles = makeStyles(styles);
 
 const ImagesByPages = {
-  home:
-    "https://thumbor.thedailymeal.com/l89JXqysFyBCS2k0KPcrqH52OP8=/870x565/https://www.theactivetimes.com/sites/default/files/uploads/r/rsz_front_shutterstock_364445939.jpg",
+  home: "https://vistapointe.net/images/shop-wallpaper-20.jpg",
   category: "https://r.lvmh-static.com/uploads/2016/01/cover3-1584x872.jpg",
   shop:
     "https://c0.wallpaperflare.com/preview/506/226/547/store-shop-interor-retail.jpg",
   signIn:
     "https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/BmI6UBJLWj5dnkc7q/videoblocks-happy-smiling-sporty-girls-in-training-clothes-standing-on-outdoor-stadium-and-giving-five-with-bottles-after-sport-workout_sfgmvsuqb_thumbnail-1080_01.png",
+  checkOut:
+    "https://1.bp.blogspot.com/-A_PuMdWHoCk/UXEb-HsS89I/AAAAAAAAHhY/IRN7PscZ7Zo/s1600/IMG_3905.JPG",
 };
 
 export default function Parallax(props) {
