@@ -50,11 +50,15 @@ const App = ({ setCurrentUser }) => {
         }}
       />
       <Switch>
-        <Route exact path="/E-Com-Store" component={HomePage} />
-        <Route path="/shop" component={ShopPage} />
-        <Route exact path="/checkout" component={CheckoutPage} />
-        <Route exact path="/sign-in" component={SignInAndSignUpPage} />
-        <Route path="/" component={HomePage} />
+        <Route exact path="/YH-Clothing" component={HomePage} />
+        <Route path="/YH-Clothing/shop" component={ShopPage} />
+        <Route exact path="/YH-Clothing/checkout" component={CheckoutPage} />
+        <Route
+          exact
+          path="/YH-Clothing/sign-in"
+          component={SignInAndSignUpPage}
+        />
+        <Route component={HomePage} />
       </Switch>
       <Footer />
     </div>

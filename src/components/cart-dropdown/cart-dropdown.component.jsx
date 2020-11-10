@@ -16,22 +16,26 @@ import {
   CartDropdownButton,
 } from "./cart-dropdown.styles";
 
+import Hidden from "@material-ui/core/Hidden";
+
 const CartDropdown = ({ cartItems, history, dispatch, match }) => (
-  <CartDropDownContainer>
-    <ItemsContainer>
-      {cartItems.map((item) => {
-        return <CartItem key={item.id} item={item} />;
-      })}
-    </ItemsContainer>
-    <CartDropdownButton
-      onClick={() => {
-        history.push(`${match.url}checkout`);
-        dispatch(toggleCartHidden());
-      }}
-    >
-      GO TO CHECKOUT
-    </CartDropdownButton>
-  </CartDropDownContainer>
+  <Hidden smDown>
+    <CartDropDownContainer>
+      <ItemsContainer>
+        {cartItems.map((item) => {
+          return <CartItem key={item.id} item={item} />;
+        })}
+      </ItemsContainer>
+      <CartDropdownButton
+        onClick={() => {
+          history.push(`/YH-Clothing${match.url}checkout`);
+          dispatch(toggleCartHidden());
+        }}
+      >
+        GO TO CHECKOUT
+      </CartDropdownButton>
+    </CartDropDownContainer>
+  </Hidden>
 );
 
 const mapStateToProps = createStructuredSelector({

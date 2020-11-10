@@ -51,7 +51,7 @@ const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/about-us" className={classes.navLink}>
+          <Link to="/YH-Clothing/about-us" className={classes.navLink}>
             <ArtTrackTwoTone className={classes.icons} /> About Us
           </Link>
         </Tooltip>
@@ -63,7 +63,7 @@ const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/shop" className={classes.navLink}>
+          <Link to="/YH-Clothing/shop" className={classes.navLink}>
             <StorefrontTwoTone className={classes.icons} />
             Our Shop
           </Link>
@@ -77,7 +77,7 @@ const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/contact" className={classes.navLink}>
+          <Link to="/YH-Clothing/contact" className={classes.navLink}>
             <ContactMailTwoTone className={classes.icons} /> Contact Us
           </Link>
         </Tooltip>
@@ -91,11 +91,15 @@ const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
           classes={{ tooltip: classes.tooltip }}
         >
           {currentUser ? (
-            <a onClick={() => auth.signOut()} className={classes.navLink}>
+            <a
+              onClick={() => auth.signOut()}
+              className={classes.navLink}
+              style={{ cursor: "pointer" }}
+            >
               <ExitToAppTwoTone className={classes.icons} /> SIGN OUT
             </a>
           ) : (
-            <Link to="/sign-in" className={classes.navLink}>
+            <Link to="/YH-Clothing/sign-in" className={classes.navLink}>
               <ExitToAppTwoTone className={classes.icons} /> Sign In
             </Link>
           )}

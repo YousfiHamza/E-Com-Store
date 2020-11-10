@@ -80,13 +80,35 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+const EmailProvider = new firebase.auth.EmailAuthProvider();
 const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 const FacebookProvider = new firebase.auth.FacebookAuthProvider();
+const GithubProvider = new firebase.auth.GithubAuthProvider();
+
+// Not Used Anymore From Here ...
 
 GoogleProvider.setCustomParameters({ propmt: "select_account" });
 FacebookProvider.setCustomParameters({ propmt: "select_account" });
+GithubProvider.setCustomParameters({ propmt: "select_account" });
 
 export const signInWithGoogle = () => auth.signInWithPopup(GoogleProvider);
 export const signInWithFaceBook = () => auth.signInWithPopup(FacebookProvider);
+export const signInWithGithub = () => auth.signInWithPopup(GithubProvider);
+export const signInWithEmail = () => auth.signInWithPopup(EmailProvider);
+
+// ... To Here !
+
+export const uiConfig = {
+  signInFlow: "popup",
+  signInOptions: [
+    EmailProvider.providerId,
+    GoogleProvider.providerId,
+    FacebookProvider.providerId,
+    GithubProvider.providerId,
+  ],
+  callbacks: {
+    signInSuccess: () => false,
+  },
+};
 
 export default firebase;

@@ -39,6 +39,9 @@ export const HeaderBlockContainer = styled(Grid)`
   font-weight: bold;
   font-style: italic;
   font-family: lobster;
+  @media only screen and (min-width: 959px) {
+    font-size: 30px;
+  }
 `;
 
 export const TotalContainer = styled.div`

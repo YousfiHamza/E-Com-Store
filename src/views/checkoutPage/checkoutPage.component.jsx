@@ -74,15 +74,18 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
     );
   }
   // if the cart is empty ... no need to stay on the checkuot page
-  else if (currentUser) {
-    return <Redirect to="./" />;
+  else if (cartTotal !== 0) {
+    return (
+      <Redirect
+        to={{
+          pathname: "/YH-Clothing/sign-in",
+          state: { prevPath: location.pathname },
+        }}
+      />
+    );
   }
   // the following code is for us to get back to our checkout page after logging in
-  return (
-    <Redirect
-      to={{ pathname: "/sign-in", state: { prevPath: location.pathname } }}
-    />
-  );
+  return <Redirect to="./YH-Clothing" />;
 };
 
 const mapStateToProps = createStructuredSelector({

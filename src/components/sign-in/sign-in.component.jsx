@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
-import { SignInContainer, TitleContainer } from "./sign-in.styles";
+import {
+  SignInContainer,
+  TitleContainer,
+  ButtonsContainer,
+} from "./sign-in.styles";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 import {
   auth,
+  uiConfig,
   signInWithGoogle,
   signInWithFaceBook,
 } from "../../firebase/firebase.utils.js";
@@ -45,33 +51,10 @@ const SignIn = () => {
   return (
     <SignInContainer item xs={12} md={5}>
       <TitleContainer>I already have an account</TitleContainer>
-      <span>Sign In With Your Email And Password</span>
-
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          name="email"
-          type="email"
-          value={email}
-          label="email"
-          handleChange={handleChange}
-          required
-        />
-        <FormInput
-          name="password"
-          type="password"
-          label="password"
-          value={password}
-          handleChange={handleChange}
-          required
-        />
-        <CustomButton type="submit">SIGN IN</CustomButton>
-        <CustomButton onClick={signInWithGoogle} isGoogleButton>
-          With Google
-        </CustomButton>
-        <CustomButton onClick={signInWithFaceBook} isFacebookButton>
-          With Facebook
-        </CustomButton>
-      </form>
+      <ButtonsContainer>
+        {" "}
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
+      </ButtonsContainer>
     </SignInContainer>
   );
 };

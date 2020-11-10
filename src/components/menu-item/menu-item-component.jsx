@@ -18,7 +18,7 @@ const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
     <Grid item md={size ? 6 : 4} xs={12}>
       <MenuItemContainer
         size={size}
-        onClick={() => history.replace(`/${linkUrl}`)}
+        onClick={() => history.replace(`/YH-Clothing/${linkUrl}`)}
       >
         <BackgroundImageContainer
           imageUrl={imageUrl}
