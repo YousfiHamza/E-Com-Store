@@ -1,18 +1,23 @@
 import React from "react";
-import "./directory.styles.sass";
+import { DirectoryMenuContainer } from "./directory.styles";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectDirectorySections } from "../../redux/directory/directory.selector";
 
+//Material UI
+import Grid from "@material-ui/core/Grid";
+
 import MenuItem from "../menu-item/menu-item-component";
 
 const Directory = ({ sections }) => (
-  <div className="directory-menu">
-    {sections.map(({ id, ...otherProps }) => (
-      <MenuItem key={id} {...otherProps} />
-    ))}
-  </div>
+  <DirectoryMenuContainer>
+    <Grid container justify="space-around">
+      {sections.map(({ id, ...otherProps }) => (
+        <MenuItem key={id} {...otherProps} />
+      ))}
+    </Grid>
+  </DirectoryMenuContainer>
 );
 
 const mapStateToProps = createStructuredSelector({

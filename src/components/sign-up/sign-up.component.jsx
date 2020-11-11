@@ -1,30 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
 
 import {
   auth,
   createUserProfileDocument,
 } from "../../firebase/firebase.utils.js";
 
-import "./sign-up.styles.sass";
+import {
+  SignUpContainer,
+  TitleContainer,
+  ButtonContainer,
+} from "./sign-up.styles";
 
-class SignUp extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      displayName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    };
-  }
+const SignUp = () => {
+  const [credentials, setCredentials] = useState({
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  handleSubmit = async (e) => {
+  const { displayName, email, password, confirmPassword } = credentials;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("Passwords don't match !");
@@ -39,7 +39,7 @@ class SignUp extends React.Component {
 
       createUserProfileDocument(user, { displayName });
 
-      this.setState({
+      setCredentials({
         displayName: "",
         email: "",
         password: "",
@@ -50,57 +50,55 @@ class SignUp extends React.Component {
     }
   };
 
-  handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({
+    setCredentials({
+      ...credentials,
       [name]: value,
     });
   };
 
-  render() {
-    const { displayName, email, password, confirmPassword } = this.state;
-    return (
-      <div className="sign-up">
-        <h2 className="title">I do not Have an Account</h2>
-        <span>Sign up With your Email</span>
-        <form className="sign-up-form" onSubmit={this.handleSubmit}>
-          <FormInput
-            type="text"
-            name="displayName"
-            value={displayName}
-            onChange={this.handleChange}
-            label="Display Name"
-            required
-          />
-          <FormInput
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            label="Email"
-            required
-          />
-          <FormInput
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            label="Password"
-            required
-          />
-          <FormInput
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={this.handleChange}
-            label="Confirm Password"
-            required
-          />
-          <CustomButton type="submit">SIGN UP</CustomButton>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <SignUpContainer item xs={12} md={5}>
+      <TitleContainer>I do not Have an Account</TitleContainer>
+      <span>Sign up With your Email</span>
+      <form className="sign-up-form" onSubmit={handleSubmit}>
+        <FormInput
+          type="text"
+          name="displayName"
+          value={displayName}
+          onChange={handleChange}
+          label="Display Name"
+          required
+        />
+        <FormInput
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          label="Email"
+          required
+        />
+        <FormInput
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+          label="Password"
+          required
+        />
+        <FormInput
+          type="password"
+          name="confirmPassword"
+          value={confirmPassword}
+          onChange={handleChange}
+          label="Confirm Password"
+          required
+        />
+        <ButtonContainer type="submit">SIGN UP</ButtonContainer>
+      </form>
+    </SignUpContainer>
+  );
+};
 
 export default SignUp;

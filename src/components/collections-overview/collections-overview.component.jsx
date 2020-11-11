@@ -1,19 +1,29 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import "./collections-overview.styles.sass";
+// Material UI
+import { Grid } from "@material-ui/core";
+
+import { CollectionsOverviewContainer } from "./collections-overview.styles";
 
 import { selectCollectionsForPreview } from "../../redux/shop/shop.selector";
 
 import CollectionPreview from "../collection-preview/collection-preview.component";
 
+import Parallax from "../parallax/parallax.component";
+
 const CollectionOverView = ({ collections }) => (
-  <div className="collections-overview">
-    {collections.map(({ id, ...otherCollectionProps }) => (
-      <CollectionPreview key={id} {...otherCollectionProps} />
-    ))}
-  </div>
+  <Fragment>
+    <Parallax filter image="shop" />
+    <CollectionsOverviewContainer>
+      {collections.map(({ id, ...otherCollectionProps }) => (
+        <Grid container>
+          <CollectionPreview key={id} {...otherCollectionProps} />
+        </Grid>
+      ))}
+    </CollectionsOverviewContainer>
+  </Fragment>
 );
 
 const mapStateToProps = createStructuredSelector({

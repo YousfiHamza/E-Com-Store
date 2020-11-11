@@ -1,30 +1,69 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import CustomButton from "../custom-button/custom-button.component";
 import { addItem } from "../../redux/cart/cart.actions";
 
-import "./collection-item.styles.sass";
+//Material UI
+import Grid from "@material-ui/core/Grid";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
-const CollectionItem = ({ item, addItem }) => {
+import Hidden from "@material-ui/core/Hidden";
+
+import {
+  CollectionItemContainer,
+  BackgroundImage,
+  CollectionFooterContainer,
+  PriceContainer,
+  NameContainer,
+  AddButton,
+} from "./collection-item.styles";
+
+const CollectionItem = ({ item, addItem, type }) => {
   const { name, price, imageUrl } = item;
+  const medium = type ? 2 : 3;
 
   return (
-    <div className="collection-item">
-      <div
-        className="image"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      />
-      <div className="collection-footer">
-        <span className="name">{name}</span>
-        <span className="price">{price}</span>
+    <CollectionItemContainer
+      item
+      xs={12}
+      sm={5}
+      md={medium}
+      data-aos="fade-down"
+    >
+      <div className="card">
+        <div className="front">
+          <img className="image" src={imageUrl} alt="..." />
+        </div>
+        <Hidden smDown>
+          <div className="back">
+            <CollectionFooterContainer>
+              <NameContainer>{name}</NameContainer>
+              <PriceContainer>{price} $</PriceContainer>
+            </CollectionFooterContainer>
+            <AddButton inverted onClick={() => addItem(item)}>
+              <AddShoppingCartIcon /> ADD
+            </AddButton>
+          </div>
+        </Hidden>
+        <Hidden mdUp>
+          <Grid container justify="center" className="mobile-card">
+            <Grid container>
+              <Grid item xs={12} className="mobile-text">
+                {name}
+              </Grid>
+              <Grid item xs={12} className="mobile-text">
+                {price} $
+              </Grid>
+            </Grid>
+            <Grid item className="button" justify="center" xs={12}>
+              <AddButton inverted onClick={() => addItem(item)}>
+                <AddShoppingCartIcon /> ADD
+              </AddButton>
+            </Grid>
+          </Grid>
+        </Hidden>
       </div>
-      <CustomButton inverted onClick={() => addItem(item)}>
-        ADD TO CART
-      </CustomButton>
-    </div>
+    </CollectionItemContainer>
   );
 };
 

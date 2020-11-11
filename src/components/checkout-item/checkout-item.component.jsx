@@ -1,6 +1,12 @@
 import React from "react";
 
-import "./checkout-item.styles.sass";
+import {
+  CheckoutItemContainer,
+  ImageContainer,
+  TextContainer,
+  QuantityContainer,
+  RemoveButton,
+} from "./checkout-item.styles";
 
 import { connect } from "react-redux";
 
@@ -10,28 +16,46 @@ import {
   removeItem,
 } from "../../redux/cart/cart.actions";
 
+import { RemoveCircle, AddCircle, DeleteForever } from "@material-ui/icons";
+
 const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
   const { imageUrl, name, quantity, price } = item;
   return (
-    <div className="checkout-item">
-      <div className="image-container">
+    <CheckoutItemContainer
+      container
+      alignItems="center"
+      justify="center"
+      xs={12}
+    >
+      <ImageContainer item xs={12} sm={2}>
         <img alt="cart-item" src={imageUrl} />
-      </div>
-      <span className="name">{name}</span>
-      <span className="quantity">
-        <div className="arrow" onClick={() => removeItem(item)}>
-          &#10094;
-        </div>
+      </ImageContainer>
+      <TextContainer item xs={12} sm={3} style={{ fontWeight: "bold" }}>
+        {name}
+      </TextContainer>
+      <TextContainer item xs={5} sm={2}>
+        {price} $
+      </TextContainer>
+      <QuantityContainer container xs={12} sm={3}>
+        <RemoveCircle
+          className="arrow"
+          onClick={() => removeItem(item)}
+          fontSize="small"
+        />
+
         <span className="value">{quantity}</span>
-        <div className="arrow" onClick={() => addItem(item)}>
-          &#10095;
-        </div>
-      </span>
-      <span className="price">{price}</span>
-      <div className="remove-button" onClick={() => clearItem(item)}>
-        &#10008;
-      </div>
-    </div>
+
+        <AddCircle
+          className="arrow"
+          onClick={() => addItem(item)}
+          fontSize="small"
+        />
+      </QuantityContainer>
+
+      <RemoveButton xs={5} sm={2} onClick={() => clearItem(item)}>
+        <DeleteForever />
+      </RemoveButton>
+    </CheckoutItemContainer>
   );
 };
 
