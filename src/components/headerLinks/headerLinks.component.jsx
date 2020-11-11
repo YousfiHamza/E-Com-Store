@@ -123,7 +123,11 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
             <CartIcon className={classes.icons} />
           ) : (
             <Link
-              to={cartItems.length ? "/checkout" : history.location.pathname}
+              to={
+                cartItems.length
+                  ? "/YH-Clothing/checkout"
+                  : history.location.pathname
+              }
               className={classes.navLink}
             >
               <ShoppingBasketTwoTone className={classes.icons} /> Your Cart

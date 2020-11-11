@@ -38,7 +38,7 @@ const CollectionItem = ({ item, addItem, type }) => {
           <div className="back">
             <CollectionFooterContainer>
               <NameContainer>{name}</NameContainer>
-              <PriceContainer>{price}</PriceContainer>
+              <PriceContainer>{price} $</PriceContainer>
             </CollectionFooterContainer>
             <AddButton inverted onClick={() => addItem(item)}>
               <AddShoppingCartIcon /> ADD
@@ -52,7 +52,7 @@ const CollectionItem = ({ item, addItem, type }) => {
                 {name}
               </Grid>
               <Grid item xs={12} className="mobile-text">
-                {price}
+                {price} $
               </Grid>
             </Grid>
             <Grid item className="button" justify="center" xs={12}>

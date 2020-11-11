@@ -8,9 +8,9 @@ export const CollectionsOverviewContainer = styled.div`
   z-index: 123;
   // border: black solid 5px;
   border-radius: 25px;
-  padding: 33px;
-  margin-left: 11vw;
-  margin-right: 11vw;
+  padding: 22px;
+  margin-left: 5vw;
+  margin-right: 5vw;
   margin-top: -33vh;
   margin-bottom: 66px;
 `;

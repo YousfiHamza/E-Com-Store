@@ -108,6 +108,7 @@ export default function Header(props) {
             paper: classes.drawerPaper,
           }}
           onClose={handleDrawerToggle}
+          onClick={handleDrawerToggle}
         >
           <div className={classes.appResponsive}>
             {leftLinks}

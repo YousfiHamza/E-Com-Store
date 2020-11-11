@@ -34,7 +34,7 @@ const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
         {name}
       </TextContainer>
       <TextContainer item xs={5} sm={2}>
-        {price}
+        {price} $
       </TextContainer>
       <QuantityContainer container xs={12} sm={3}>
         <RemoveCircle

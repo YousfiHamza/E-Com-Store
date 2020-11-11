@@ -12,7 +12,7 @@ const CartItem = ({ item: { imageUrl, price, name, quantity } }) => (
     <ItemDetailsContainer>
       <TextContainer weight="bold">{name}</TextContainer>
       <TextContainer>
-        {quantity} x {price}
+        {quantity} x {price} $
       </TextContainer>
     </ItemDetailsContainer>
   </CartItemContainer>
