@@ -32,7 +32,7 @@ const headerStyle = {
   },
   absolute: {
     position: "absolute",
-    zIndex: "1100",
+    zIndex: "1111",
   },
   fixed: {
     position: "fixed",
@@ -41,6 +41,7 @@ const headerStyle = {
   container: {
     ...container,
     minHeight: "50px",
+    maxHeight: "100px",
     flex: "1",
     alignItems: "center",
     justifyContent: "space-between",
@@ -131,7 +132,8 @@ const headerStyle = {
     transitionProperty: "top, bottom, width",
     transitionDuration: ".2s, .2s, .35s",
     transitionTimingFunction: "linear, linear, ease",
-    width: drawerWidth,
+    Width: drawerWidth,
+    maxWidth: "60vw",
     ...boxShadow,
     position: "fixed",
     display: "block",

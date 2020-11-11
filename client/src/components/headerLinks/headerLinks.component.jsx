@@ -8,6 +8,7 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 import {
   selectCartHidden,
   selectCartItems,
+  selectCartItemsCount,
 } from "../../redux/cart/cart.selectors";
 
 import { auth } from "../../firebase/firebase.utils.js";
@@ -45,7 +46,13 @@ import styles from "./headerLinks.styles";
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
+const HeaderLinks = ({
+  currentUser,
+  hidden,
+  cartItems,
+  itemsCount,
+  history,
+}) => {
   const classes = useStyles();
   return (
     <List className={classes.list}>
@@ -129,7 +136,8 @@ const HeaderLinks = ({ currentUser, hidden, cartItems, history }) => {
               }
               className={classes.navLink}
             >
-              <ShoppingBasketTwoTone className={classes.icons} /> Your Cart
+              <ShoppingBasketTwoTone className={classes.icons} /> Cart [{" "}
+              {itemsCount} ]
             </Link>
           )}
         </Tooltip>
@@ -143,6 +151,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
   cartItems: selectCartItems,
+  itemsCount: selectCartItemsCount,
 });
 
 export default withRouter(connect(mapStateToProps)(HeaderLinks));
