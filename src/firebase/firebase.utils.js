@@ -101,8 +101,8 @@ export const signInWithEmail = () => auth.signInWithPopup(EmailProvider);
 export const uiConfig = {
   signInFlow: "popup",
   signInOptions: [
-    EmailProvider.providerId,
     GoogleProvider.providerId,
+    EmailProvider.providerId,
     FacebookProvider.providerId,
     GithubProvider.providerId,
   ],

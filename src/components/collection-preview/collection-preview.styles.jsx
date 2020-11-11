@@ -13,16 +13,18 @@ export const CollectionPreviewContainer = styled(Grid)`
 export const TitleContainer = styled(Grid)`
   font-size: 33px;
   font-family: "lobster";
+  margin: 44px 0;
+  text-shadow: 5px 5px 10px cyan, 5px 5px 10px blue;
+  &:hover {
+    cursor: pointer;
+  }
   @media (min-width: 900px) {
     background-image: url("${Background1}");
     background-position: 50%;
     background-size: 50% 100%;
     background-repeat: no-repeat;
-  }
-  margin: 44px;
-  text-shadow: 5px 5px 10px cyan, 5px 5px 10px blue;
-  &:hover {
-    cursor: pointer;
+    font-size: 44px;
+    margin: 44px;
   }
 `;
 

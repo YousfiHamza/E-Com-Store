@@ -2,10 +2,23 @@ import styled from "styled-components";
 
 import { Grid } from "@material-ui/core";
 
+import Background from "../../assets/images/backgrounds/wave_3.png";
+
 export const SignInContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
   margin: 22px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 0, 0, 0.4) 40%,
+    rgba(0, 83, 156, 1) 70%,
+    rgba(0, 0, 0, 0.8) 110%
+  );
+  border-radius: 50%;
+  @media (max-width: 432px) {
+    border-radius: 10px;
+  }
 `;
 
 export const TitleContainer = styled.h2`
