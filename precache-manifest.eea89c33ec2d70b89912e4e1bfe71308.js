@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2c7cc0dcc822c5135b0901d80289f59",
+    "revision": "6ff9efc893d8fbabb986bfe7198aa64d",
     "url": "/YH-Clothing/index.html"
   },
   {
-    "revision": "a5ac4f67ca904ca7e2cc",
+    "revision": "1da2b816ad417ec5ad0b",
     "url": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css"
   },
   {
-    "revision": "5dfafd3a0780ce2d4564",
-    "url": "/YH-Clothing/static/js/2.aa8bd6d4.chunk.js"
+    "revision": "ecc2ad657971e1d60a52",
+    "url": "/YH-Clothing/static/js/2.b0673bdb.chunk.js"
   },
   {
     "revision": "8581cc42d597f52aac488309f955cff9",
-    "url": "/YH-Clothing/static/js/2.aa8bd6d4.chunk.js.LICENSE.txt"
+    "url": "/YH-Clothing/static/js/2.b0673bdb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a5ac4f67ca904ca7e2cc",
-    "url": "/YH-Clothing/static/js/main.c6ebe70b.chunk.js"
+    "revision": "1da2b816ad417ec5ad0b",
+    "url": "/YH-Clothing/static/js/main.ba382ce1.chunk.js"
   },
   {
-    "revision": "ecdb5757e90242ca11cc",
-    "url": "/YH-Clothing/static/js/runtime-main.e91ab2fe.js"
+    "revision": "b8ff2c31176fb8f3ce35",
+    "url": "/YH-Clothing/static/js/runtime-main.eb025c39.js"
   },
   {
     "revision": "a5a86f179f4af64b0b25366f320034db",
