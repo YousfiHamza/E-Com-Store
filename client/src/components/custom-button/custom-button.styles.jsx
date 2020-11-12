@@ -1,4 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const invertedStyles = css`
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    transition: 0.3s linear;
+    border: none;
+  }
+`;
+
+const getButtonStyles = (props) => {
+  return props.inverted ? invertedStyles : "";
+};
 
 export const CustomButtonContainer = styled.button`
   width: 100%;
@@ -26,4 +45,5 @@ export const CustomButtonContainer = styled.button`
     border: 1px solid black;
     border-radius: 0.5;
   }
+  ${getButtonStyles}
 `;

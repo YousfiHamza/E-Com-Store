@@ -72,4 +72,5 @@ export const SubtitleContainer = styled.span`
   margin-bottom: 6px;
   font-size: 22px;
   color: #4a4a4a;
+  font-family: lobster;
 `;
