@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import {
   SignInContainer,
@@ -6,48 +6,11 @@ import {
   ButtonsContainer,
 } from "./sign-in.styles";
 
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-import {
-  auth,
-  uiConfig,
-  signInWithGoogle,
-  signInWithFaceBook,
-} from "../../firebase/firebase.utils.js";
+import { auth, uiConfig } from "../../firebase/firebase.utils.js";
 
 const SignIn = () => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-  });
-
-  const { email, password } = credentials;
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-
-      setCredentials({
-        email: "",
-        password: "",
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-    setCredentials({
-      ...credentials,
-      [name]: value,
-    });
-  };
-
   return (
     <SignInContainer item xs={12} md={5}>
       <TitleContainer>I already have an account</TitleContainer>

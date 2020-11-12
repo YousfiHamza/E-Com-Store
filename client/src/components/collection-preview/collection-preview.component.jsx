@@ -22,7 +22,7 @@ const CollectionPreview = ({ title, items, history, match, routeName }) => (
     >
       <DoubleArrowIcon /> {title.toUpperCase()}
     </TitleContainer>{" "}
-    <PreviewContainer container xs={12} justify="center" data-aos="fade-right">
+    <PreviewContainer container xs={12} justify="center" data-aos="slide-up">
       {items
         .filter((item, index) => index < 4)
         .map((item) => (

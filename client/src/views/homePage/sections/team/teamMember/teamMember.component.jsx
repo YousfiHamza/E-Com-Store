@@ -1,7 +1,7 @@
 import React from "react";
 
 //Material UI
-import { Typography, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 // nodejs library that concatenates classes
 import classNames from "classnames";

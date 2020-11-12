@@ -85,7 +85,7 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
     );
   }
   // the following code is for us to get back to our checkout page after logging in
-  return <Redirect to="./YH-Clothing" />;
+  return <Redirect to="./" />;
 };
 
 const mapStateToProps = createStructuredSelector({

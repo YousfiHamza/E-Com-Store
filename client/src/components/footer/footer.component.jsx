@@ -49,30 +49,50 @@ const Footer = () => {
       </Grid>
       <SocialsContainer container xs={12} md={3}>
         <Grid item justify="center" align="center" xs={3}>
-          <a href="https://www.pinterest.com/" target="_blank">
+          <a
+            href="https://www.pinterest.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <PinterestIcon />
           </a>
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
-          <a href="https://www.facebook.com/" target="_blank">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <FacebookIcon />
           </a>
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
-          <a href="https://www.instagram.com/" target="_blank">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <InstagramIcon />
           </a>
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
-          <a href="https://www.twitter.com/" target="_blank">
+          <a
+            href="https://www.twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <TwitterIcon />
           </a>
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
-          <a href="https://www.youtube.com/" target="_blank">
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {" "}
             <YouTubeIcon />
           </a>

@@ -11,7 +11,6 @@ import Hidden from "@material-ui/core/Hidden";
 
 import {
   CollectionItemContainer,
-  BackgroundImage,
   CollectionFooterContainer,
   PriceContainer,
   NameContainer,
@@ -28,7 +27,7 @@ const CollectionItem = ({ item, addItem, type }) => {
       xs={12}
       sm={5}
       md={medium}
-      data-aos="fade-down"
+      data-aos="fade-right"
     >
       <div className="card">
         <div className="front">

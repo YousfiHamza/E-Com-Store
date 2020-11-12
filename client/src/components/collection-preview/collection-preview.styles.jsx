@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Typography, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import Background1 from "../../assets/images/backgrounds/wave_1.gif";
 

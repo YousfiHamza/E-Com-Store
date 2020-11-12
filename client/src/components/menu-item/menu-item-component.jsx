@@ -15,7 +15,7 @@ import { withRouter } from "react-router-dom";
 
 const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
   return (
-    <Grid item md={size ? 6 : 4} xs={12}>
+    <Grid item md={size ? 6 : 4} xs={12} data-aos="fade-down">
       <MenuItemContainer
         size={size}
         onClick={() => history.replace(`/YH-Clothing/${linkUrl}`)}

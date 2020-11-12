@@ -1,47 +1,4 @@
-import styled, { css } from "styled-components";
-
-const invertedStyles = css`
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  border-radius: 10px;
-
-  &:hover {
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    transition: 0.3s linear;
-    border: none;
-  }
-`;
-
-const GoogleStyles = css`
-  background-color: #b3bbc4;
-  &:hover {
-    background-color: white;
-    color: #ff5236;
-    border: 2px solid #ff5236;
-  }
-`;
-
-const FacebookStyles = css`
-  background-color: #2470c7;
-  &:hover {
-    background-color: white;
-    color: #2470c7;
-    border: 2px solid #2470c7;
-  }
-`;
-
-const getButtonStyles = (props) => {
-  if (props.isGoogleButton) {
-    return GoogleStyles;
-  }
-  if (props.isFacebookButton) {
-    return FacebookStyles;
-  }
-  return props.inverted ? invertedStyles : "";
-};
+import styled from "styled-components";
 
 export const CustomButtonContainer = styled.button`
   width: 100%;
@@ -69,5 +26,4 @@ export const CustomButtonContainer = styled.button`
     border: 1px solid black;
     border-radius: 0.5;
   }
-  ${getButtonStyles}
 `;

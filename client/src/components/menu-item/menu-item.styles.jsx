@@ -54,7 +54,7 @@ export const ContentContainer = styled.div`
   justify-content: center;
   border: 1px solid black;
   background-color: #fff;
-  opacity: 0.5;
+  opacity: 0.6;
   text-transform: uppercase;
   position: absolute;
 `;
@@ -63,7 +63,8 @@ export const TitleContainer = styled.h1`
   font-weight: bold;
   margin-bottom: 6px;
   font-size: 22px;
-  color: #4a4a4a;
+  color: black;
+  font-style: italic;
 `;
 
 export const SubtitleContainer = styled.span`

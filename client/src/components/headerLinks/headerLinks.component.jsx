@@ -17,8 +17,6 @@ import { auth } from "../../firebase/firebase.utils.js";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link, withRouter } from "react-router-dom";
 
@@ -27,7 +25,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import {
@@ -37,10 +34,6 @@ import {
   ArtTrackTwoTone,
   ShoppingBasketTwoTone,
 } from "@material-ui/icons";
-
-// core components
-import CustomDropdown from "../customDropdown/customDropdown.component";
-import Button from "../customButton2/button.component";
 
 import styles from "./headerLinks.styles";
 
@@ -55,7 +48,7 @@ const HeaderLinks = ({
 }) => {
   const classes = useStyles();
   return (
-    <List className={classes.list}>
+    <List className={classes.list} data-aos="fade-down">
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"

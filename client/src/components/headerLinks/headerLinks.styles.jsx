@@ -55,7 +55,6 @@ const headerLinksStyle = (theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
-      marginLeft: "0",
       marginBottom: "8px",
       marginTop: "8px",
       textAlign: "left",

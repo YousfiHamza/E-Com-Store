@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 import { Grid } from "@material-ui/core";
 
-import Background from "../../assets/images/backgrounds/wave_3.png";
-
 export const SignInContainer = styled(Grid)`
   display: flex;
   flex-direction: column;

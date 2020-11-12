@@ -5,10 +5,6 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import {
-  selectCartHidden,
-  selectCartItems,
-} from "../../redux/cart/cart.selectors";
 
 import { auth } from "../../firebase/firebase.utils.js";
 
@@ -20,7 +16,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import {
@@ -28,18 +23,13 @@ import {
   ContactMailTwoTone,
   ExitToAppTwoTone,
   ArtTrackTwoTone,
-  ShoppingBasketTwoTone,
 } from "@material-ui/icons";
-
-// core components
-import CustomDropdown from "../customDropdown/customDropdown.component";
-import Button from "../customButton2/button.component";
 
 import styles from "../headerLinks/headerLinks.styles";
 
 const useStyles = makeStyles(styles);
 
-const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
+const FooterLinks = ({ currentUser }) => {
   const classes = useStyles();
   return (
     <List className={classes.list}>
@@ -110,8 +100,6 @@ const FooterLinks = ({ currentUser, hidden, cartItems, history }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden,
-  cartItems: selectCartItems,
 });
 
 export default withRouter(connect(mapStateToProps)(FooterLinks));

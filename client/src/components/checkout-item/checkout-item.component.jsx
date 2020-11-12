@@ -26,6 +26,7 @@ const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
       alignItems="center"
       justify="center"
       xs={12}
+      data-aos="fade-right"
     >
       <ImageContainer item xs={12} sm={2}>
         <img alt="cart-item" src={imageUrl} />
