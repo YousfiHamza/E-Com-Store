@@ -15,6 +15,9 @@ import {
   MemberDescription,
 } from "./teamMember.styles";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const useStyles = makeStyles(imagesStyles);
 
 const TeamMember = ({ membre }) => {
@@ -34,7 +37,8 @@ const TeamMember = ({ membre }) => {
           marginTop: "-33px",
         }}
       >
-        <img
+        <LazyLoadImage
+          effect="blur"
           alt="..."
           src={require(`../../../../../assets/images/team/${membre.avatar}`)}
           className={imageClasses}

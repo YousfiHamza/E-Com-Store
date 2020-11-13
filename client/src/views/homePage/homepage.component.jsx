@@ -7,16 +7,13 @@ import Details from "./sections/details/details.component";
 import Team from "./sections/team/team.component";
 import Sponsored from "./sections/sponsored/sponsored.component";
 
-const HomePage = () => {
-  return (
-    <Fragment>
-      <Parallax filter image="home" />
-      <Directory />
-      <Details />
-      <Sponsored />
-      <Team />
-    </Fragment>
-  );
-};
-
+const HomePage = () => (
+  <Fragment>
+    <Parallax filter image="home" />
+    <Directory />
+    <Details />
+    <Sponsored />
+    <Team />
+  </Fragment>
+);
 export default HomePage;

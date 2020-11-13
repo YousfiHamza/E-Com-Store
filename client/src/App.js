@@ -15,6 +15,8 @@ import { createUserProfileDocument } from "./firebase/firebase.utils";
 
 import Spinner from "./components/spinner/spinner.component";
 
+import ErrorBoundary from "./components/errorBoundary/ErrorBoundary.component.jsx";
+
 const HomePage = lazy(() => import("./views/homePage/homepage.component"));
 const ShopPage = lazy(() => import("./views/shopPage/shoppage.component"));
 const SignInAndSignUpPage = lazy(() =>
@@ -56,18 +58,23 @@ const App = ({ setCurrentUser }) => {
         }}
       />
       <Switch>
-        <Suspense fallback={<Spinner />}>
-          <Route exact path="/YH-Clothing" component={HomePage} />
-
-          <Route path="/YH-Clothing/shop" component={ShopPage} />
-          <Route exact path="/YH-Clothing/checkout" component={CheckoutPage} />
-          <Route
-            exact
-            path="/YH-Clothing/sign-in"
-            component={SignInAndSignUpPage}
-          />
-          <Route component={HomePage} />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <Route exact path="/YH-Clothing" component={HomePage} />
+            <Route path="/YH-Clothing/shop" component={ShopPage} />
+            <Route
+              exact
+              path="/YH-Clothing/checkout"
+              component={CheckoutPage}
+            />
+            <Route
+              exact
+              path="/YH-Clothing/sign-in"
+              component={SignInAndSignUpPage}
+            />
+          </Suspense>
+        </ErrorBoundary>
+        <Route component={HomePage} />
       </Switch>
       <Footer />
     </div>
