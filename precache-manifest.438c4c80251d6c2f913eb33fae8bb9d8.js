@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "36d9368bab6db4a0b22b3dbeb4d3d445",
+    "revision": "b4d211ac1d63ca45d52c83f6530cef37",
     "url": "/YH-Clothing/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/YH-Clothing/static/css/4.9905d55a.chunk.css"
   },
   {
-    "revision": "e1fc10e811c8320bd040",
+    "revision": "991e3fb29ca3bba44d27",
     "url": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css"
   },
   {
@@ -56,12 +56,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/YH-Clothing/static/js/9.1a5cb316.chunk.js"
   },
   {
-    "revision": "e1fc10e811c8320bd040",
-    "url": "/YH-Clothing/static/js/main.61aab263.chunk.js"
+    "revision": "991e3fb29ca3bba44d27",
+    "url": "/YH-Clothing/static/js/main.a048d812.chunk.js"
   },
   {
     "revision": "32f087dba79bf611660069a68c00c0b9",
-    "url": "/YH-Clothing/static/js/main.61aab263.chunk.js.LICENSE.txt"
+    "url": "/YH-Clothing/static/js/main.a048d812.chunk.js.LICENSE.txt"
   },
   {
     "revision": "3fac6d20b8792471ee47",
