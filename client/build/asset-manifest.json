@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css",
-    "main.js": "/YH-Clothing/static/js/main.ba382ce1.chunk.js",
-    "main.js.map": "/YH-Clothing/static/js/main.ba382ce1.chunk.js.map",
+    "main.js": "/YH-Clothing/static/js/main.b0801a75.chunk.js",
+    "main.js.map": "/YH-Clothing/static/js/main.b0801a75.chunk.js.map",
     "runtime-main.js": "/YH-Clothing/static/js/runtime-main.eb025c39.js",
     "runtime-main.js.map": "/YH-Clothing/static/js/runtime-main.eb025c39.js.map",
     "static/js/2.b0673bdb.chunk.js": "/YH-Clothing/static/js/2.b0673bdb.chunk.js",
     "static/js/2.b0673bdb.chunk.js.map": "/YH-Clothing/static/js/2.b0673bdb.chunk.js.map",
     "index.html": "/YH-Clothing/index.html",
-    "precache-manifest.eea89c33ec2d70b89912e4e1bfe71308.js": "/YH-Clothing/precache-manifest.eea89c33ec2d70b89912e4e1bfe71308.js",
+    "precache-manifest.3f9d631996a37dc65a3b799c0e3e3a0c.js": "/YH-Clothing/precache-manifest.3f9d631996a37dc65a3b799c0e3e3a0c.js",
     "service-worker.js": "/YH-Clothing/service-worker.js",
     "static/css/main.8ff59cd9.chunk.css.map": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css.map",
     "static/js/2.b0673bdb.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/2.b0673bdb.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.eb025c39.js",
     "static/js/2.b0673bdb.chunk.js",
     "static/css/main.8ff59cd9.chunk.css",
-    "static/js/main.ba382ce1.chunk.js"
+    "static/js/main.b0801a75.chunk.js"
   ]
 }

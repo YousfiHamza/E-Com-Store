@@ -59,7 +59,7 @@ const Footer = () => {
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/yousfihamza17"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -69,7 +69,7 @@ const Footer = () => {
         </Grid>
         <Grid item justify="center" align="center" xs={2}>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/yousfi_1st"
             target="_blank"
             rel="noopener noreferrer"
           >

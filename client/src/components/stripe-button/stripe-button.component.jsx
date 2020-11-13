@@ -26,12 +26,10 @@ const StripeCheckoutButton = ({ price, clearCart }) => {
     })
       .then((response) => {
         alert("Payement Successful :) !");
-        console.log(response);
         clearCart();
       })
       .catch((error) => {
         alert("Payement Issue. re-check your credit card !");
-        console.log(error);
       });
   };
 

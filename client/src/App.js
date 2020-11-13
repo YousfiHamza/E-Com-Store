@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -10,13 +10,19 @@ import Header from "./components/header/header.component";
 import HeaderLinks from "./components/headerLinks/headerLinks.component";
 import Footer from "./components/footer/footer.component.jsx";
 
-import HomePage from "./views/homePage/homepage.component";
-import ShopPage from "./views/shopPage/shoppage.component";
-import SignInAndSignUpPage from "./views/sign-in-and-sign-up-Page/sign-in-and-sign-up.component";
-import CheckoutPage from "./views/checkoutPage/checkoutPage.component";
-
 import { auth } from "./firebase/firebase.utils";
 import { createUserProfileDocument } from "./firebase/firebase.utils";
+
+import Spinner from "./components/spinner/spinner.component";
+
+const HomePage = lazy(() => import("./views/homePage/homepage.component"));
+const ShopPage = lazy(() => import("./views/shopPage/shoppage.component"));
+const SignInAndSignUpPage = lazy(() =>
+  import("./views/sign-in-and-sign-up-Page/sign-in-and-sign-up.component")
+);
+const CheckoutPage = lazy(() =>
+  import("./views/checkoutPage/checkoutPage.component")
+);
 
 const App = ({ setCurrentUser }) => {
   useEffect(() => {
@@ -50,15 +56,18 @@ const App = ({ setCurrentUser }) => {
         }}
       />
       <Switch>
-        <Route exact path="/YH-Clothing" component={HomePage} />
-        <Route path="/YH-Clothing/shop" component={ShopPage} />
-        <Route exact path="/YH-Clothing/checkout" component={CheckoutPage} />
-        <Route
-          exact
-          path="/YH-Clothing/sign-in"
-          component={SignInAndSignUpPage}
-        />
-        <Route component={HomePage} />
+        <Suspense fallback={<Spinner />}>
+          <Route exact path="/YH-Clothing" component={HomePage} />
+
+          <Route path="/YH-Clothing/shop" component={ShopPage} />
+          <Route exact path="/YH-Clothing/checkout" component={CheckoutPage} />
+          <Route
+            exact
+            path="/YH-Clothing/sign-in"
+            component={SignInAndSignUpPage}
+          />
+          <Route component={HomePage} />
+        </Suspense>
       </Switch>
       <Footer />
     </div>
