@@ -29,7 +29,7 @@ const Footer = () => {
       xs={12}
     >
       <Grid item xs={12} md={3}>
-        <Link to="/YH-Clothing">
+        <Link to="./">
           <BrandContainer align="center" variant="h3">
             YousFitness - Clothing
           </BrandContainer>

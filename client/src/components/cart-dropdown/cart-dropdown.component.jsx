@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import CartItem from "../cart-item/cart-item.component";
 
@@ -26,14 +26,15 @@ const CartDropdown = ({ cartItems, history, dispatch, match }) => (
           return <CartItem key={item.id} item={item} />;
         })}
       </ItemsContainer>
-      <CartDropdownButton
-        onClick={() => {
-          history.push(`/YH-Clothing${match.url}checkout`);
-          dispatch(toggleCartHidden());
-        }}
-      >
-        GO TO CHECKOUT
-      </CartDropdownButton>
+      <Link to="./checkout">
+        <CartDropdownButton
+          onClick={() => {
+            dispatch(toggleCartHidden());
+          }}
+        >
+          GO TO CHECKOUT
+        </CartDropdownButton>
+      </Link>
     </CartDropDownContainer>
   </Hidden>
 );

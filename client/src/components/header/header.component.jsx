@@ -63,7 +63,7 @@ export default function Header(props) {
     [classes.fixed]: fixed,
   });
   const brandComponent = (
-    <Link to="/YH-Clothing" className={classes.title}>
+    <Link to="/" className={classes.title}>
       <Hidden smDown implementation="css">
         {brand}
       </Hidden>

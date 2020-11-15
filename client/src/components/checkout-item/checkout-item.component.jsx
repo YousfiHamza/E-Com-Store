@@ -17,7 +17,6 @@ import {
 } from "../../redux/cart/cart.actions";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { RemoveCircle, AddCircle, DeleteForever } from "@material-ui/icons";
 
@@ -32,7 +31,7 @@ const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
       data-aos="fade-right"
     >
       <ImageContainer item xs={12} sm={2}>
-        <LazyLoadImage effect="blur" alt="cart-item" src={imageUrl} />
+        <LazyLoadImage alt="cart-item" src={imageUrl} />
       </ImageContainer>
       <TextContainer item xs={12} sm={3}>
         <span className="name"> {name}</span>

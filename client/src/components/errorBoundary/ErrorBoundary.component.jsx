@@ -1,4 +1,5 @@
 import React from "react";
+import { Fragment } from "react";
 
 import {
   ErrorImageOverlay,
@@ -27,10 +28,12 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasErrored) {
       return (
-        <ErrorImageOverlay>
-          <ErrorImageContainer imageUrl="https://i.imgur.com/yW2W9SC.png" />
-          <ErrorImageText>Sorry this page is broken</ErrorImageText>
-        </ErrorImageOverlay>
+        <Fragment>
+          <ErrorImageOverlay>
+            <ErrorImageContainer imageUrl="https://i.imgur.com/yW2W9SC.png" />
+            <ErrorImageText>Sorry this page is broken</ErrorImageText>
+          </ErrorImageOverlay>
+        </Fragment>
       );
     }
 

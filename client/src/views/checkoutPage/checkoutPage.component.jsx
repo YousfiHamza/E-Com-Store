@@ -66,7 +66,7 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
             <span className="underlined">Card Number</span> : 4242 4242 4242
             4242 <br />
             <span className="underlined">Exp</span> : 12/34 <br />
-            <span className="underlined">CVV</span> : 567
+            <span className="underlined">CVV</span> : 555
           </TestWarningContainer>
           <StripeCheckoutButton price={cartTotal} />
         </CheckoutPageContainer>
@@ -78,7 +78,7 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
     return (
       <Redirect
         to={{
-          pathname: "/YH-Clothing/sign-in",
+          pathname: "/sign-in",
           state: { prevPath: location.pathname },
         }}
       />

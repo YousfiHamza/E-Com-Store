@@ -10,7 +10,6 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Hidden from "@material-ui/core/Hidden";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 import {
   CollectionItemContainer,
@@ -34,12 +33,7 @@ const CollectionItem = ({ item, addItem, type }) => {
     >
       <div className="card">
         <div className="front">
-          <LazyLoadImage
-            effect="blur"
-            className="image"
-            src={imageUrl}
-            alt="..."
-          />
+          <LazyLoadImage className="image" src={imageUrl} alt="..." />
         </div>
         <Hidden smDown>
           <div className="back">

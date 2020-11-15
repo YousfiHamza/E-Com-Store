@@ -57,25 +57,18 @@ const App = ({ setCurrentUser }) => {
           color: "info",
         }}
       />
-      <Switch>
-        <ErrorBoundary>
-          <Suspense fallback={<Spinner />}>
-            <Route exact path="/YH-Clothing" component={HomePage} />
-            <Route path="/YH-Clothing/shop" component={ShopPage} />
-            <Route
-              exact
-              path="/YH-Clothing/checkout"
-              component={CheckoutPage}
-            />
-            <Route
-              exact
-              path="/YH-Clothing/sign-in"
-              component={SignInAndSignUpPage}
-            />
-          </Suspense>
-        </ErrorBoundary>
-        <Route component={HomePage} />
-      </Switch>
+
+      <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
+            <Route exact path="/sign-in" component={SignInAndSignUpPage} />
+            <Route component={HomePage} />
+          </Switch>
+        </Suspense>
+      </ErrorBoundary>
       <Footer />
     </div>
   );

@@ -107,7 +107,7 @@ export const uiConfig = {
     GithubProvider.providerId,
   ],
   callbacks: {
-    signInSuccess: () => false,
+    signInSuccessWithAuthResult: () => false,
   },
 };
 

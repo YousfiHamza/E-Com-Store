@@ -56,7 +56,7 @@ const HeaderLinks = ({
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/YH-Clothing/about-us" className={classes.navLink}>
+          <Link to="/about-us" className={classes.navLink}>
             <ArtTrackTwoTone className={classes.icons} /> About Us
           </Link>
         </Tooltip>
@@ -68,7 +68,7 @@ const HeaderLinks = ({
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/YH-Clothing/shop" className={classes.navLink}>
+          <Link to="/shop" className={classes.navLink}>
             <StorefrontTwoTone className={classes.icons} />
             Our Shop
           </Link>
@@ -82,7 +82,7 @@ const HeaderLinks = ({
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/YH-Clothing/contact" className={classes.navLink}>
+          <Link to="/contact" className={classes.navLink}>
             <ContactMailTwoTone className={classes.icons} /> Contact Us
           </Link>
         </Tooltip>
@@ -104,7 +104,7 @@ const HeaderLinks = ({
               <ExitToAppTwoTone className={classes.icons} /> SIGN OUT
             </a>
           ) : (
-            <Link to="/YH-Clothing/sign-in" className={classes.navLink}>
+            <Link to="/sign-in" className={classes.navLink}>
               <ExitToAppTwoTone className={classes.icons} /> Sign In
             </Link>
           )}
