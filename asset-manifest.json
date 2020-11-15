@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css",
-    "main.js": "/YH-Clothing/static/js/main.a5717f97.chunk.js",
-    "main.js.map": "/YH-Clothing/static/js/main.a5717f97.chunk.js.map",
+    "main.js": "/YH-Clothing/static/js/main.e5021140.chunk.js",
+    "main.js.map": "/YH-Clothing/static/js/main.e5021140.chunk.js.map",
     "runtime-main.js": "/YH-Clothing/static/js/runtime-main.e1a10f81.js",
     "runtime-main.js.map": "/YH-Clothing/static/js/runtime-main.e1a10f81.js.map",
     "static/js/2.e9e23d31.chunk.js": "/YH-Clothing/static/js/2.e9e23d31.chunk.js",
@@ -25,13 +25,13 @@
     "static/js/10.645ca929.chunk.js": "/YH-Clothing/static/js/10.645ca929.chunk.js",
     "static/js/10.645ca929.chunk.js.map": "/YH-Clothing/static/js/10.645ca929.chunk.js.map",
     "index.html": "/YH-Clothing/index.html",
-    "precache-manifest.e6bc521143ffc6a57de9c4e2d991663d.js": "/YH-Clothing/precache-manifest.e6bc521143ffc6a57de9c4e2d991663d.js",
+    "precache-manifest.87ae9118f6044ad70923b09521c3a4e4.js": "/YH-Clothing/precache-manifest.87ae9118f6044ad70923b09521c3a4e4.js",
     "service-worker.js": "/YH-Clothing/service-worker.js",
     "static/css/4.9905d55a.chunk.css.map": "/YH-Clothing/static/css/4.9905d55a.chunk.css.map",
     "static/css/main.8ff59cd9.chunk.css.map": "/YH-Clothing/static/css/main.8ff59cd9.chunk.css.map",
     "static/js/2.e9e23d31.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/2.e9e23d31.chunk.js.LICENSE.txt",
     "static/js/6.61cdea92.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/6.61cdea92.chunk.js.LICENSE.txt",
-    "static/js/main.a5717f97.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/main.a5717f97.chunk.js.LICENSE.txt",
+    "static/js/main.e5021140.chunk.js.LICENSE.txt": "/YH-Clothing/static/js/main.e5021140.chunk.js.LICENSE.txt",
     "static/media/YousfitnessLogo.png": "/YH-Clothing/static/media/YousfitnessLogo.a5a86f17.png",
     "static/media/if.png": "/YH-Clothing/static/media/if.4cf00bda.png",
     "static/media/shopping-bag.30f07071.svg": "/YH-Clothing/static/media/shopping-bag.30f07071.svg",
@@ -46,6 +46,6 @@
     "static/js/runtime-main.e1a10f81.js",
     "static/js/2.e9e23d31.chunk.js",
     "static/css/main.8ff59cd9.chunk.css",
-    "static/js/main.a5717f97.chunk.js"
+    "static/js/main.e5021140.chunk.js"
   ]
 }
