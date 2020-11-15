@@ -26,7 +26,7 @@ const CartDropdown = ({ cartItems, history, dispatch, match }) => (
           return <CartItem key={item.id} item={item} />;
         })}
       </ItemsContainer>
-      <Link to="./checkout">
+      <Link to="/checkout">
         <CartDropdownButton
           onClick={() => {
             dispatch(toggleCartHidden());
