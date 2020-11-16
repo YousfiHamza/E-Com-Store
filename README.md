@@ -5,22 +5,25 @@ The App is Live on [TheYousfi.com/YH-Clothing](http://www.theyousfi.com/YH-Cloth
 
 ## Overview :
 
-![](client/src/assets/ReadMe.Images/YH-1.png)
-![](client/src/assets/ReadMe.Images/YH-3.png)
-![](client/src/assets/ReadMe.Images/YH-4.png)
-![](client/src/assets/ReadMe.Images/YH-5.png)
-
-## Features :
-
-These are some of the features :
 
 * Responsive Web App using some Material UI Components.
 
+![](client/src/assets/ReadMe.Images/YH-1.png)
+
 * State Management Using Redux + Hooks ( Apollo GraphQL in the next Release )
+
+![](client/src/assets/ReadMe.Images/YH-3.png)
 
 * Authentication Using Email-Passord or simply with the Google/Facebook/Github Accounts
 
+![](client/src/assets/ReadMe.Images/YH-4.png)
+
+
 * Payement Processing Using Stripe ( Paypal in the next Release )
+
+![](client/src/assets/ReadMe.Images/YH-5.png)
+
+## Last Updates :
 
 * Performance Enhancement Using Suspense to get multiple chanks of our code ( Next.Js for SSR in the next Release )
 
