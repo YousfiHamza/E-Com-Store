@@ -52,11 +52,15 @@ const HeaderLinks = ({
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title={window.innerWidth > 959 ? "And More ..." : "It's All "}
+          title="N/A for Now"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/about-us" className={classes.navLink}>
+          <Link
+            to="/about-us"
+            style={{ textDecoration: "line-through" }}
+            className={classes.navLink}
+          >
             <ArtTrackTwoTone className={classes.icons} /> About Us
           </Link>
         </Tooltip>
@@ -78,11 +82,15 @@ const HeaderLinks = ({
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title={window.innerWidth > 959 ? "Or Dont ..." : "Try To"}
+          title="N/A for Now"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Link to="/contact" className={classes.navLink}>
+          <Link
+            to="/contact"
+            style={{ textDecoration: "line-through" }}
+            className={classes.navLink}
+          >
             <ContactMailTwoTone className={classes.icons} /> Contact Us
           </Link>
         </Tooltip>
