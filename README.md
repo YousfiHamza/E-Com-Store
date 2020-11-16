@@ -22,7 +22,7 @@ The App is Live on [TheYousfi.com/YH-Clothing](http://www.theyousfi.com/YH-Cloth
 
 ## Last Updates :
 
-* Performance Enhancement Using Suspense to get multiple chanks of our code ( Next.Js for SSR in the next Release )
+* Performance Enhancement Using Suspense to get multiple chunks of our code ( Next.Js for SSR in the next Release )
 
 * Lazy Loading Images 
 
