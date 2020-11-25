@@ -4,6 +4,7 @@ import { persistStore } from "redux-persist";
 import rootReducer from "./root-reducer";
 import thunk from "redux-thunk";
 
+// Middlewares Array
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === "development") {
