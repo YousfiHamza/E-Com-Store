@@ -2,7 +2,7 @@ import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { setCurrentUser } from "./redux/user/user.actions";
+import { setCurrentUser, checkUserSession } from "./redux/user/user.actions";
 
 import "./App.sass";
 
@@ -26,24 +26,10 @@ const CheckoutPage = lazy(() =>
   import("./views/checkoutPage/checkoutPage.component")
 );
 
-const App = ({ setCurrentUser }) => {
+const App = ({ checkUserSession }) => {
   useEffect(() => {
-    const unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-        });
-      }
-      setCurrentUser(userAuth);
-    });
-    return () => {
-      unSubscribeFromAuth();
-    };
-  }, [setCurrentUser]);
+    checkUserSession();
+  }, []);
 
   return (
     <div className="app">
@@ -76,6 +62,7 @@ const App = ({ setCurrentUser }) => {
 
 const mapDispatchtoProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  checkUserSession: () => dispatch(checkUserSession()),
 });
 
 export default connect(null, mapDispatchtoProps)(App);

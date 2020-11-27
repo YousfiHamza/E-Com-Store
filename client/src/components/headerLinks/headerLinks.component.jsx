@@ -13,6 +13,8 @@ import {
 
 import { auth } from "../../firebase/firebase.utils.js";
 
+import { signOutStart } from "../../redux/user/user.actions";
+
 //our Components
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
@@ -45,6 +47,7 @@ const HeaderLinks = ({
   cartItems,
   itemsCount,
   history,
+  signOutStart,
 }) => {
   const classes = useStyles();
   return (
@@ -105,7 +108,7 @@ const HeaderLinks = ({
         >
           {currentUser ? (
             <a
-              onClick={() => auth.signOut()}
+              onClick={() => signOutStart()}
               className={classes.navLink}
               style={{ cursor: "pointer" }}
             >
@@ -155,4 +158,10 @@ const mapStateToProps = createStructuredSelector({
   itemsCount: selectCartItemsCount,
 });
 
-export default withRouter(connect(mapStateToProps)(HeaderLinks));
+const mapDispatchToProps = (dispatch) => ({
+  signOutStart: () => dispatch(signOutStart()),
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(HeaderLinks)
+);

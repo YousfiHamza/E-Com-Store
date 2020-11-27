@@ -75,6 +75,15 @@ export const convertCollectionsSnapshotToMap = (collections) => {
   }, {});
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 // Auth methods init. section //
 
 export const auth = firebase.auth();
@@ -106,9 +115,7 @@ export const uiConfig = {
     FacebookProvider.providerId,
     GithubProvider.providerId,
   ],
-  callbacks: {
-    signInSuccessWithAuthResult: () => false,
-  },
+  signInSuccessUrl: "./sign-in",
 };
 
 export default firebase;
