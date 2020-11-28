@@ -30,6 +30,8 @@ const CartProvider = ({ children }) => {
   const clearItemFromCart = (item) =>
     setCartItems(removeItemFromCart(cartItems, item));
 
+  const clearCart = () => setCartItems([]);
+
   useEffect(() => {
     const hiddenCart = sessionStorage.getItem("is-cart-hidden");
     const itemsArray = sessionStorage.getItem("cart-content");
@@ -77,6 +79,7 @@ const CartProvider = ({ children }) => {
         toggleHidden,
         cartItemsCount,
         cartItemsTotal,
+        clearCart,
       }}
     >
       {children}

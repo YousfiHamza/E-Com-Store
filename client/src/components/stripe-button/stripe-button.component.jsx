@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import StripeCheckout from "react-stripe-checkout";
 
-import { connect } from "react-redux";
+import { CartContext } from "../../providers/cart/cart.provider";
 
 import Logo from "../../assets/images/if.png";
 
-import { clearCart } from "../../redux/cart/cart.actions";
-
 import axios from "axios";
 
-const StripeCheckoutButton = ({ price, clearCart }) => {
+const StripeCheckoutButton = ({ price }) => {
+  const { clearCart } = useContext(CartContext);
   const priceForStripe = price * 100;
   const publishableKey = "pk_test_9OfuS4gpdp4WRIgXDMroIPo2";
 
   // token for payment processing (backend work needed)
   const onToken = (token) => {
+    clearCart();
     axios({
       url: "https://yh-clothing.herokuapp.com/payement",
       method: "post",
@@ -26,7 +26,6 @@ const StripeCheckoutButton = ({ price, clearCart }) => {
     })
       .then((response) => {
         alert("Payement Successful :) !");
-        clearCart();
       })
       .catch((error) => {
         alert("Payement Issue. re-check your credit card !");
@@ -49,8 +48,4 @@ const StripeCheckoutButton = ({ price, clearCart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  clearCart: () => dispatch(clearCart()),
-});
-
-export default connect(null, mapDispatchToProps)(StripeCheckoutButton);
+export default StripeCheckoutButton;

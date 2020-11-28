@@ -10,14 +10,6 @@ import {
   RemoveButton,
 } from "./checkout-item.styles";
 
-import { connect } from "react-redux";
-
-import {
-  clearItemFromCart,
-  addItem,
-  removeItem,
-} from "../../redux/cart/cart.actions";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { RemoveCircle, AddCircle, DeleteForever } from "@material-ui/icons";
@@ -65,10 +57,4 @@ const CheckoutItem = ({ item }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  clearItem: (item) => dispatch(clearItemFromCart(item)),
-  addItem: (item) => dispatch(addItem(item)),
-  removeItem: (item) => dispatch(removeItem(item)),
-});
-
-export default connect(null, mapDispatchToProps)(CheckoutItem);
+export default CheckoutItem;
