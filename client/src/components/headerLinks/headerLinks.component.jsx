@@ -1,19 +1,14 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useContext } from "react";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import {
-  selectCartHidden,
-  selectCartItems,
-  selectCartItemsCount,
-} from "../../redux/cart/cart.selectors";
-
-import { auth } from "../../firebase/firebase.utils.js";
 
 import { signOutStart } from "../../redux/user/user.actions";
+
+import { CartContext } from "../../providers/cart/cart.provider";
 
 //our Components
 import CartIcon from "../cart-icon/cart-icon.component";
@@ -41,14 +36,8 @@ import styles from "./headerLinks.styles";
 
 const useStyles = makeStyles(styles);
 
-const HeaderLinks = ({
-  currentUser,
-  hidden,
-  cartItems,
-  itemsCount,
-  history,
-  signOutStart,
-}) => {
+const HeaderLinks = ({ currentUser, history, signOutStart }) => {
+  const { hidden, cartItems, cartItemsCount } = useContext(CartContext);
   const classes = useStyles();
   return (
     <List className={classes.list} data-aos="fade-down">
@@ -141,7 +130,7 @@ const HeaderLinks = ({
               className={classes.navLink}
             >
               <ShoppingBasketTwoTone className={classes.icons} /> Cart [{" "}
-              {itemsCount} ]
+              {cartItemsCount} ]
             </Link>
           )}
         </Tooltip>
@@ -153,9 +142,6 @@ const HeaderLinks = ({
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden,
-  cartItems: selectCartItems,
-  itemsCount: selectCartItemsCount,
 });
 
 const mapDispatchToProps = (dispatch) => ({

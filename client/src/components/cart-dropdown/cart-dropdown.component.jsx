@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import { connect } from "react-redux";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import CartItem from "../cart-item/cart-item.component";
 
-import { selectCartItems } from "../../redux/cart/cart.selectors";
-import { toggleCartHidden } from "../../redux/cart/cart.actions";
-
-import { createStructuredSelector } from "reselect";
+import { CartContext } from "../../providers/cart/cart.provider";
 
 import {
   CartDropDownContainer,
@@ -18,29 +14,28 @@ import {
 
 import Hidden from "@material-ui/core/Hidden";
 
-const CartDropdown = ({ cartItems, history, dispatch, match }) => (
-  <Hidden smDown>
-    <CartDropDownContainer>
-      <ItemsContainer>
-        {cartItems.map((item) => {
-          return <CartItem key={item.id} item={item} />;
-        })}
-      </ItemsContainer>
-      <Link to="/checkout">
-        <CartDropdownButton
-          onClick={() => {
-            dispatch(toggleCartHidden());
-          }}
-        >
-          GO TO CHECKOUT
-        </CartDropdownButton>
-      </Link>
-    </CartDropDownContainer>
-  </Hidden>
-);
+const CartDropdown = () => {
+  const { cartItems, toggleHidden } = useContext(CartContext);
+  return (
+    <Hidden smDown>
+      <CartDropDownContainer>
+        <ItemsContainer>
+          {cartItems.map((item) => {
+            return <CartItem key={item.id} item={item} />;
+          })}
+        </ItemsContainer>
+        <Link to="/checkout">
+          <CartDropdownButton
+            onClick={() => {
+              toggleHidden();
+            }}
+          >
+            GO TO CHECKOUT
+          </CartDropdownButton>
+        </Link>
+      </CartDropDownContainer>
+    </Hidden>
+  );
+};
 
-const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
-});
-
-export default React.memo(withRouter(connect(mapStateToProps)(CartDropdown)));
+export default React.memo(CartDropdown);

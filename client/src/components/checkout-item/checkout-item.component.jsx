@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { CartContext } from "../../providers/cart/cart.provider";
 
 import {
   CheckoutItemContainer,
@@ -20,7 +22,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { RemoveCircle, AddCircle, DeleteForever } from "@material-ui/icons";
 
-const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
+const CheckoutItem = ({ item }) => {
+  const { addItem, removeItem, clearItemFromCart } = useContext(CartContext);
   const { imageUrl, name, quantity, price } = item;
   return (
     <CheckoutItemContainer
@@ -55,7 +58,7 @@ const CheckoutItem = ({ item, clearItem, addItem, removeItem }) => {
         />
       </QuantityContainer>
 
-      <RemoveButton xs={5} sm={2} onClick={() => clearItem(item)}>
+      <RemoveButton xs={5} sm={2} onClick={() => clearItemFromCart(item)}>
         <DeleteForever />
       </RemoveButton>
     </CheckoutItemContainer>

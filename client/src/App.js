@@ -2,16 +2,13 @@ import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { setCurrentUser, checkUserSession } from "./redux/user/user.actions";
+import { checkUserSession } from "./redux/user/user.actions";
 
 import "./App.sass";
 
 import Header from "./components/header/header.component";
 import HeaderLinks from "./components/headerLinks/headerLinks.component";
 import Footer from "./components/footer/footer.component.jsx";
-
-import { auth } from "./firebase/firebase.utils";
-import { createUserProfileDocument } from "./firebase/firebase.utils";
 
 import Spinner from "./components/spinner/spinner.component";
 
@@ -29,7 +26,7 @@ const CheckoutPage = lazy(() =>
 const App = ({ checkUserSession }) => {
   useEffect(() => {
     checkUserSession();
-  }, []);
+  });
 
   return (
     <div className="app">
@@ -61,7 +58,6 @@ const App = ({ checkUserSession }) => {
 };
 
 const mapDispatchtoProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
   checkUserSession: () => dispatch(checkUserSession()),
 });
 

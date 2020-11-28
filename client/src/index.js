@@ -9,15 +9,19 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 
+import CartProvider from "./providers/cart/cart.provider.jsx";
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter basename="/YH-Clothing">
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </BrowserRouter>
-    </Provider>
+    <CartProvider>
+      <Provider store={store}>
+        <BrowserRouter basename="/YH-Clothing">
+          <PersistGate persistor={persistor}>
+            <App />
+          </PersistGate>
+        </BrowserRouter>
+      </Provider>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

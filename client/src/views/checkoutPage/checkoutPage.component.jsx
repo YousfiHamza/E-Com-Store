@@ -1,4 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
+
+import { CartContext } from "../../providers/cart/cart.provider";
 
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -8,11 +10,6 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-
-import {
-  selectCartItems,
-  selectCartTotal,
-} from "../../redux/cart/cart.selectors";
 
 import {
   CheckoutPageContainer,
@@ -26,9 +23,11 @@ import Parallax from "../../components/parallax/parallax.component";
 
 import Hidden from "@material-ui/core/Hidden";
 
-const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
+const CheckoutPage = ({ currentUser, location }) => {
+  const { cartItems, cartItemsTotal } = useContext(CartContext);
+
   // the user must have at least one item in his cart and he must be logged in
-  if (currentUser && cartTotal) {
+  if (currentUser && cartItemsTotal) {
     return (
       <Fragment>
         <Parallax filter image="checkOut" />
@@ -57,7 +56,7 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
             <CheckoutItem key={item.id} item={item} />
           ))}
           <TotalContainer>
-            <span>Total : $ {cartTotal}</span>
+            <span>Total : $ {cartItemsTotal}</span>
           </TotalContainer>
           <TestWarningContainer>
             *Please use the following test credit card for payments*
@@ -68,13 +67,13 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
             <span className="underlined">Exp</span> : 12/34 <br />
             <span className="underlined">CVV</span> : 555
           </TestWarningContainer>
-          <StripeCheckoutButton price={cartTotal} />
+          <StripeCheckoutButton price={cartItemsTotal} />
         </CheckoutPageContainer>
       </Fragment>
     );
   }
   // if the cart is empty ... no need to stay on the checkuot page
-  else if (cartTotal !== 0) {
+  else if (cartItemsTotal !== 0) {
     return (
       <Redirect
         to={{
@@ -89,8 +88,6 @@ const CheckoutPage = ({ cartItems, cartTotal, currentUser, location }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
-  cartTotal: selectCartTotal,
   currentUser: selectCurrentUser,
 });
 

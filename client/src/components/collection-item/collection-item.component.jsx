@@ -1,7 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useContext } from "react";
 
-import { addItem } from "../../redux/cart/cart.actions";
+import { CartContext } from "../../providers/cart/cart.provider";
 
 //Material UI
 import Grid from "@material-ui/core/Grid";
@@ -19,7 +18,8 @@ import {
   AddButton,
 } from "./collection-item.styles";
 
-const CollectionItem = ({ item, addItem, type }) => {
+const CollectionItem = ({ item, type }) => {
+  const { addItem } = useContext(CartContext);
   const { name, price, imageUrl } = item;
   const medium = type ? 2 : 3;
 
@@ -68,8 +68,4 @@ const CollectionItem = ({ item, addItem, type }) => {
   );
 };
 
-const mapDispatchtoProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
-});
-
-export default connect(null, mapDispatchtoProps)(CollectionItem);
+export default CollectionItem;
