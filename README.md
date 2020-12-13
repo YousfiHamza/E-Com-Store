@@ -1,7 +1,7 @@
 ## Welcome To YH Clothing :
 
 This is a E-com Store Responsive Web App created mainly with React.JS from scratch.
-The App is Live on [TheYousfi.com/YH-Clothing](http://www.theyousfi.com/YH-Clothing/) <=
+The App is Live on [www.YH-Clothing.com](https://yousfihamza.github.io/YH-Clothing) <=
 
 ## Responsive Web App using some Material UI Components.
 
